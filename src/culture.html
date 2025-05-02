@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture of Chefchaouen - The Blue Pearl of Morocco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chefblue: {
+                            light: '#8FB5D9',
+                            DEFAULT: '#4A7DAB',
+                            dark: '#2C5282',
+                        },
+                        sand: {
+                            light: '#F5EFE0',
+                            DEFAULT: '#E6D9B8',
+                            dark: '#C4B28C',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-sand-light">
+    <!-- Top Info Bar -->
+    <div class="bg-chefblue-dark text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center text-sm">
+            <div class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Chefchaouen, Morocco</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="mailto:info@chefchaouenguide.com" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-envelope mr-1"></i> info@chefchaouenguide.com
+                </a>
+                <a href="tel:+212539986XXX" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-phone mr-1"></i> +212 539 986 XXX
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-chefblue-dark flex items-center">
+                <span class="text-3xl mr-2">💧</span> Chefchaouen
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Home</a></li>
+                <li><a href="history.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">History</a></li>
+                <li><a href="culture.html" class="font-medium text-chefblue hover:text-chefblue-dark border-b-2 border-chefblue transition duration-300">Culture</a></li>
+                <li><a href="gallery.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Gallery</a></li>
+                <li><a href="tours.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Tours</a></li>
+                <li><a href="contact.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Language Selector -->
+            <div class="hidden md:flex items-center ml-6">
+                <select id="language-selector" class="bg-transparent border-none text-gray-600 focus:outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="container mx-auto px-4 py-2">
+                <li><a href="index.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Home</a></li>
+                <li><a href="history.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">History</a></li>
+                <li><a href="culture.html" class="block py-2 font-medium text-chefblue">Culture</a></li>
+                <li><a href="gallery.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Gallery</a></li>
+                <li><a href="tours.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Tours</a></li>
+                <li><a href="contact.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Contact</a></li>
+                <li>
+                    <select id="mobile-language-selector" class="w-full py-2 bg-transparent text-gray-600 focus:outline-none border-t border-gray-200 mt-2">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Interactive Table of Contents -->
+        <div id="table-of-contents" class="fixed left-0 top-1/2 transform -translate-y-1/2 z-30 hidden lg:block">
+            <div class="bg-white rounded-r-lg shadow-lg overflow-hidden">
+                <div class="py-3 px-4 bg-chefblue-dark text-white font-bold">
+                    <h3 class="text-sm">On This Page</h3>
+                </div>
+                <ul class="py-2">
+                    <li><a href="#introduction" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Introduction</a></li>
+                    <li><a href="#clothing" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Clothing</a></li>
+                    <li><a href="#cuisine" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Cuisine</a></li>
+                    <li><a href="#music" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Music & Dance</a></li>
+                    <li><a href="#crafts" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Crafts</a></li>
+                    <li><a href="#festivals" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Festivals</a></li>
+                    <li><a href="#daily-life" class="block py-2 px-4 text-sm hover:bg-chefblue-light/20 transition duration-300 border-l-4 border-transparent hover:border-chefblue">Daily Life</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Page Header with Cultural Pattern Background -->
+        <section class="bg-chefblue-dark text-white py-20 relative overflow-hidden">
+            <!-- Decorative Pattern Background -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNMjUsMjUgTDQwLDEwIE00MCw0MCBMMjUsMjUgTDEwLDQwIE0xMCwxMCBMMjUsMjUiIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+'); background-repeat: repeat;"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-down">The Culture of Chefchaouen</h1>
+                <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">Experience the unique blend of Berber, Arabic, and Andalusian influences that shape the city's vibrant culture</p>
+                
+                <!-- Quick Navigation -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#clothing" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-tshirt mr-2"></i> Clothing
+                    </a>
+                    <a href="#cuisine" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-utensils mr-2"></i> Cuisine
+                    </a>
+                    <a href="#music" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-music mr-2"></i> Music
+                    </a>
+                    <a href="#crafts" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-hands mr-2"></i> Crafts
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-sand-light to-transparent"></div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">A Cultural Melting Pot</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Background decorative element -->
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-chefblue-light/10 rounded-full -z-10"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-chefblue-light/10 rounded-full -z-10"></div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
+                        <p class="text-lg mb-6">Chefchaouen's culture is a fascinating blend of influences from various civilizations that have shaped the region over centuries. The city's unique character comes from its mix of Berber, Arab, Jewish, and Andalusian heritage.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="flex">
+                                <div class="mr-4 text-chefblue-dark">
+                                    <i class="fas fa-landmark text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-chefblue-dark mb-2">Historical Influence</h3>
+                                    <p>Founded in 1471 as a fortress to fight Portuguese invasions, Chefchaouen later became a refuge for Moorish and Jewish exiles from Spain during the Reconquista.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="mr-4 text-chefblue-dark">
+                                    <i class="fas fa-language text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-chefblue-dark mb-2">Linguistic Heritage</h3>
+                                    <p>The local dialect incorporates Spanish words, reflecting the influence of Andalusian refugees and the later Spanish occupation of northern Morocco.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-lg">Today, while embracing modernity and welcoming visitors from around the world, Chefchaouen maintains its authentic cultural traditions with pride. This cultural diversity is evident in everything from the architecture and cuisine to music and traditional crafts that make Chefchaouen so distinctive.</p>
+                        
+                        <!-- Cultural Influences Diagram -->
+                        <div class="mt-8 p-6 bg-sand-light/50 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 text-center">Cultural Influences</h3>
+                            <div class="relative h-64 md:h-80">
+                                <!-- Center circle -->
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-chefblue flex items-center justify-center text-white font-bold text-center shadow-lg">
+                                    <span>Chefchaouen Culture</span>
+                                </div>
+                                
+                                <!-- Influence circles -->
+                                <div class="absolute top-0 left-1/4 transform -translate-x-1/2 w-24 h-24 rounded-full bg-chefblue-light flex items-center justify-center text-white font-medium text-center shadow-md">
+                                    <span>Berber</span>
+                                </div>
+                                
+                                <div class="absolute top-1/4 right-0 transform -translate-x-1/2 w-24 h-24 rounded-full bg-chefblue-light flex items-center justify-center text-white font-medium text-center shadow-md">
+                                    <span>Andalusian</span>
+                                </div>
+                                
+                                <div class="absolute bottom-0 left-1/3 transform -translate-x-1/2 w-24 h-24 rounded-full bg-chefblue-light flex items-center justify-center text-white font-medium text-center shadow-md">
+                                    <span>Arab</span>
+                                </div>
+                                
+                                <div class="absolute bottom-1/4 right-1/4 transform -translate-x-1/2 w-24 h-24 rounded-full bg-chefblue-light flex items-center justify-center text-white font-medium text-center shadow-md">
+                                    <span>Jewish</span>
+                                </div>
+                                
+                                <!-- Connection lines -->
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="200" y1="150" x2="100" y2="50" stroke="#4A7DAB" strokeWidth="2" />
+                                    <line x1="200" y1="150" x2="300" y2="75" stroke="#4A7DAB" strokeWidth="2" />
+                                    <line x1="200" y1="150" x2="100" y2="225" stroke="#4A7DAB" strokeWidth="2" />
+                                    <line x1="200" y1="150" x2="275" y2="225" stroke="#4A7DAB" strokeWidth="2" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Elements Tabs -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Cultural Elements</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <!-- Video Introduction -->
+                <div class="max-w-4xl mx-auto mb-16">
+                    <div class="relative aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl" data-aos="fade-up">
+                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/exampleID" title="Discover Chefchaouen's Culture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full"></iframe>
+                    </div>
+                    <div class="text-center mt-4 text-gray-600 italic">Experience the vibrant culture of Chefchaouen through this short documentary</div>
+                </div>
+                
+                <!-- Cultural Elements Sections -->
+                
+                <!-- Traditional Clothing -->
+                <div id="clothing" class="max-w-5xl mx-auto mb-16 scroll-mt-24">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="order-2 md:order-1" data-aos="fade-right">
+                            <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-tshirt text-2xl text-chefblue-dark mr-3"></i>
+                                    <h3 class="text-2xl font-bold text-chefblue-dark">Traditional Clothing</h3>
+                                </div>
+                                
+                                <p class="text-lg mb-4">The traditional dress of Chefchaouen reflects both practical mountain living and cultural heritage:</p>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <span class="bg-chefblue-dark text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</span>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark">Djellaba</h4>
+                                            <p>A long, loose-fitting outer robe with full sleeves, often made of wool for the mountain climate. In Chefchaouen, they are commonly blue or neutral-colored.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <span class="bg-chefblue-dark text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</span>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark">Mendil</h4>
+                                            <p>Colorful woven cloths worn by women as head coverings, often featuring intricate patterns and bright colors that contrast beautifully with the blue surroundings.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <span class="bg-chefblue-dark text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</span>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark">Rif Hat</h4>
+                                            <p>The distinctive straw hat with colorful pom-poms worn by men in the Rif region. These hats protect from the sun while working outdoors.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <span class="bg-chefblue-dark text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</span>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark">Handwoven Textiles</h4>
+                                            <p>Clothing often features intricate handwoven patterns unique to the region, showcasing the skilled craftsmanship passed down through generations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2" data-aos="fade-left">
+                            <div class="relative">
+                                <img src="./img/Traditional clothing of Chefchaouen.png" alt="Traditional clothing of Chefchaouen" class="rounded-lg shadow-lg w-full h-auto">
+                                <!-- Caption overlay -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3 rounded-b-lg">
+                                    <p class="text-sm">A woman wearing traditional Riffian attire with colorful embroidery</p>
+                                </div>
+                                <!-- Decorative element -->
+                                <div class="absolute -top-4 -right-4 w-20 h-20 bg-chefblue/20 rounded-full -z-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cuisine -->
+                <div id="cuisine" class="max-w-5xl mx-auto mb-16 scroll-mt-24">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div data-aos="fade-right">
+                            <div class="cuisine-slider relative rounded-lg overflow-hidden shadow-lg">
+                                <div>
+                                    <img src="./img/Traditional Chefchaouen cuisine.png" alt="Traditional Chefchaouen cuisine" class="w-full h-80">
+                                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3">
+                                        <p class="text-sm">Traditional tagine, a slow-cooked stew served in a conical clay pot</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="./img/gallery/Spice market in Chefchaouen.png" alt="Spice market in Chefchaouen" class="w-full h-80">
+                                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3">
+                                        <p class="text-sm">Colorful spices in the local market add flavor to regional dishes</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="./img/gallery/Traditional Moroccan tea service.png" alt="Traditional Moroccan tea service" class="w-full h-80">
+                                    <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3">
+                                        <p class="text-sm">Mint tea, known as "Moroccan whiskey," is an important part of hospitality</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Decorative element -->
+                            <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-chefblue/20 rounded-full -z-10"></div>
+                        </div>
+                        <div data-aos="fade-left">
+                            <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-utensils text-2xl text-chefblue-dark mr-3"></i>
+                                    <h3 class="text-2xl font-bold text-chefblue-dark">Cuisine</h3>
+                                </div>
+                                
+                                <p class="text-lg mb-4">Chefchaouen's cuisine combines Moroccan staples with local mountain ingredients and Andalusian influences:</p>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Tagine</h4>
+                                        <p class="text-sm">Slow-cooked stews with local vegetables, herbs, and meats in a distinctive conical clay pot.</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Goat Cheese</h4>
+                                        <p class="text-sm">The region is famous for its fresh, tangy goat cheese made from the milk of local mountain goats.</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Olive Oil</h4>
+                                        <p class="text-sm">Locally produced and used abundantly in cooking, Chefchaouen olive oil is prized for its flavor.</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Mountain Herbs</h4>
+                                        <p class="text-sm">Wild herbs from the Rif Mountains add distinctive flavors to regional dishes.</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Baissara</h4>
+                                        <p class="text-sm">A hearty fava bean soup popular in the region, especially during cooler months.</p>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                                        <h4 class="font-medium text-chefblue-dark mb-1">Mint Tea</h4>
+                                        <p class="text-sm">The national drink, often prepared with local mint varieties and served with abundant sugar.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Recipe Preview -->
+                                <div class="mt-6 pt-6 border-t border-gray-200">
+                                    <h4 class="font-bold text-chefblue-dark mb-2">Try a Local Recipe: Chefchaouen Tagine</h4>
+                                    <button id="show-recipe" class="bg-chefblue hover:bg-chefblue-dark text-white px-4 py-2 rounded-lg transition duration-300 inline-flex items-center">
+                                        <i class="fas fa-book-open mr-2"></i> View Recipe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Music and Dance -->
+                <div id="music" class="max-w-5xl mx-auto mb-16 scroll-mt-24">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="order-2 md:order-1" data-aos="fade-right">
+                            <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-music text-2xl text-chefblue-dark mr-3"></i>
+                                    <h3 class="text-2xl font-bold text-chefblue-dark">Music and Dance</h3>
+                                </div>
+                                
+                                <p class="text-lg mb-4">The musical traditions of Chefchaouen reflect its diverse cultural heritage:</p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-chefblue rounded-full flex items-center justify-center text-white mr-4">
+                                            <i class="fas fa-guitar text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark mb-1">Andalusian Music</h4>
+                                            <p>Classical music brought by refugees from Spain in the 15th century. This sophisticated tradition features complex rhythms and melodies performed by orchestras.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-chefblue rounded-full flex items-center justify-center text-white mr-4">
+                                            <i class="fas fa-drum text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark mb-1">Jebli Music</h4>
+                                            <p>Traditional mountain music with distinctive rhythms and melodies that tell stories of rural life, love, and nature. A cornerstone of local identity.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-chefblue rounded-full flex items-center justify-center text-white mr-4">
+                                            <i class="fas fa-compact-disc text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark mb-1">Traditional Instruments</h4>
+                                            <p>Include the oud (stringed instrument), rebab (bowed string instrument), bendir (frame drum), and kamenjah (violin). Each adds unique tones to local music.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 w-16 h-16 bg-chefblue rounded-full flex items-center justify-center text-white mr-4">
+                                            <i class="fas fa-users text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-chefblue-dark mb-1">Ahidous</h4>
+                                            <p>A traditional Berber circle dance performed at celebrations. Participants form a circle, moving rhythmically while singing collective poems.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2" data-aos="fade-left">
+                            <div class="relative">
+                                <img src="./img/Traditional music performance.png" alt="Traditional music performance" class="rounded-lg shadow-lg w-full h-auto">
+                                
+                                <!-- Caption overlay -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3 rounded-b-lg">
+                                    <p class="text-sm">Musicians performing traditional music with local instruments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Crafts and Artisanship -->
+                <div id="crafts" class="max-w-5xl mx-auto scroll-mt-24">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div data-aos="fade-right">
+                            <div class="relative">
+                                <img src="./img/Crafts and Artisanship.jpg" alt="Traditional crafts of Chefchaouen" class="rounded-lg shadow-lg w-full h-auto">
+                                <!-- Caption overlay -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3 rounded-b-lg">
+                                    <p class="text-sm">Artisans create intricate designs in the traditional workshops of the medina</p>
+                                </div>
+                                <!-- Decorative element -->
+                                <div class="absolute -top-4 -left-4 w-20 h-20 bg-chefblue/20 rounded-full -z-10"></div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-left">
+                            <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-hands text-2xl text-chefblue-dark mr-3"></i>
+                                    <h3 class="text-2xl font-bold text-chefblue-dark">Crafts and Artisanship</h3>
+                                </div>
+                                
+                                <p class="text-lg mb-4">Chefchaouen is renowned for its skilled artisans who create distinctive handicrafts:</p>
+                                
+                                <!-- Accordion for craft types -->
+                                <div class="crafts-accordion space-y-3">
+                                    <!-- Wool Weaving -->
+                                    <div class="craft-item">
+                                        <button class="craft-toggle w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-sm hover:bg-chefblue-light/10 transition duration-300">
+                                            <span class="font-medium text-chefblue-dark">Wool Weaving</span>
+                                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="craft-content hidden mt-2 p-4 bg-white/50 rounded-lg">
+                                            <p>Colorful blankets, rugs, and clothing made on traditional looms. The designs often incorporate geometric Berber patterns and bright colors. The wool comes from sheep raised in the surrounding mountains.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Leather Goods -->
+                                    <div class="craft-item">
+                                        <button class="craft-toggle w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-sm hover:bg-chefblue-light/10 transition duration-300">
+                                            <span class="font-medium text-chefblue-dark">Leather Goods</span>
+                                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="craft-content hidden mt-2 p-4 bg-white/50 rounded-lg">
+                                            <p>Handcrafted leather bags, poufs, shoes, and accessories. Chefchaouen's leather workers use traditional tanning methods and often decorate their pieces with embroidery and appliqué.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Woodwork -->
+                                    <div class="craft-item">
+                                        <button class="craft-toggle w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-sm hover:bg-chefblue-light/10 transition duration-300">
+                                            <span class="font-medium text-chefblue-dark">Woodwork</span>
+                                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="craft-content hidden mt-2 p-4 bg-white/50 rounded-lg">
+                                            <p>Carved cedar wood items including furniture, decorative pieces, and household items. Cedar from the surrounding mountains is carved using techniques passed down through generations.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pottery and Brass Work -->
+                                    <div class="craft-item">
+                                        <button class="craft-toggle w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-sm hover:bg-chefblue-light/10 transition duration-300">
+                                            <span class="font-medium text-chefblue-dark">Pottery & Brass Work</span>
+                                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="craft-content hidden mt-2 p-4 bg-white/50 rounded-lg">
+                                            <p>Distinctive blue and white ceramics and intricate brass lanterns, trays, and decorative items. The blue pottery reflects the city's signature color, while brass work shows Andalusian influence.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Workshop Visit CTA -->
+                                <div class="mt-6 pt-6 border-t border-gray-200">
+                                    <a href="tours.html#workshops" class="bg-chefblue hover:bg-chefblue-dark text-white px-6 py-3 rounded-lg transition duration-300 inline-flex items-center">
+                                        <i class="fas fa-hammer mr-2"></i> Book a Workshop Visit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Festivals Section with Timeline -->
+        <section id="festivals" class="container mx-auto px-4 py-16 scroll-mt-24">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Festivals and Celebrations</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <p class="text-lg mb-12 text-center" data-aos="fade-up">Throughout the year, Chefchaouen comes alive with various cultural celebrations that showcase local traditions</p>
+                
+                <!-- Festival Timeline -->
+                <div class="relative">
+                    <!-- Center line -->
+                    <div class="absolute left-0 md:left-1/2 h-full w-1 bg-chefblue-light transform md:-translate-x-1/2" data-aos="fade-up" data-aos-duration="1500"></div>
+                    
+                    <!-- Timeline Items -->
+                    
+                    <!-- January: Berber New Year -->
+                    <div class="relative mb-16" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-8 md:text-right order-2 md:order-1 mt-4 md:mt-0">
+                                <span class="inline-block text-white bg-chefblue-dark px-2 py-1 rounded-md text-sm mb-2">January</span>
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-2">Yennayer (Berber New Year)</h3>
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <p class="text-gray-700">Celebrated in January, this ancient tradition marks the agricultural new year. Families prepare special meals featuring traditional dishes like couscous with seven vegetables, and there are community celebrations with music and dance.</p>
+                                </div>
+                            </div>
+                            <div class="md:mx-4 mb-4 md:mb-0 order-1 md:order-2 z-10">
+                                <div class="w-16 h-16 rounded-full bg-chefblue flex items-center justify-center text-white font-bold shadow-md">
+                                    <i class="fas fa-calendar-day text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 md:pl-8 order-3 hidden md:block"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spring: Moussem of Sidi Ali Ben Hamdouch -->
+                    <div class="relative mb-16" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-8 order-2 hidden md:block"></div>
+                            <div class="md:mx-4 mb-4 md:mb-0 order-1 z-10">
+                                <div class="w-16 h-16 rounded-full bg-chefblue flex items-center justify-center text-white font-bold shadow-md">
+                                    <i class="fas fa-star-and-crescent text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 md:pl-8 order-3 mt-4 md:mt-0">
+                                <span class="inline-block text-white bg-chefblue-dark px-2 py-1 rounded-md text-sm mb-2">Spring</span>
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-2">Moussem of Sidi Ali Ben Hamdouch</h3>
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <p class="text-gray-700">This annual pilgrimage and festival honors a local saint. Pilgrims from across Morocco gather for prayers, music, and communal meals. The event showcases traditional Jebli music and dance performances, offering a window into spiritual practices of the region.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- May/June: Eid al-Fitr -->
+                    <div class="relative mb-16" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-8 md:text-right order-2 md:order-1 mt-4 md:mt-0">
+                                <span class="inline-block text-white bg-chefblue-dark px-2 py-1 rounded-md text-sm mb-2">May/June (varies)</span>
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-2">Eid al-Fitr</h3>
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <p class="text-gray-700">The celebration marking the end of Ramadan is a major event in Chefchaouen, with families gathering for feasts, exchanging gifts, and visiting friends and relatives. The city is decorated with lights, and special sweets like chebakia and sellou are prepared for the occasion.</p>
+                                </div>
+                            </div>
+                            <div class="md:mx-4 mb-4 md:mb-0 order-1 md:order-2 z-10">
+                                <div class="w-16 h-16 rounded-full bg-chefblue flex items-center justify-center text-white font-bold shadow-md">
+                                    <i class="fas fa-moon text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 md:pl-8 order-3 hidden md:block"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- July/August: Summer Festival -->
+                    <div class="relative mb-16" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-8 order-2 hidden md:block"></div>
+                            <div class="md:mx-4 mb-4 md:mb-0 order-1 z-10">
+                                <div class="w-16 h-16 rounded-full bg-chefblue flex items-center justify-center text-white font-bold shadow-md">
+                                    <i class="fas fa-music text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 md:pl-8 order-3 mt-4 md:mt-0">
+                                <span class="inline-block text-white bg-chefblue-dark px-2 py-1 rounded-md text-sm mb-2">July/August</span>
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-2">Chefchaouen Arts Festival</h3>
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <p class="text-gray-700">A celebration of local arts and culture featuring music performances, art exhibitions, and cultural workshops. The festival attracts artists and visitors from across Morocco and internationally, showcasing the city's artistic heritage against the backdrop of its blue streets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- November: Independence Day -->
+                    <div class="relative" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-8 md:text-right order-2 md:order-1 mt-4 md:mt-0">
+                                <span class="inline-block text-white bg-chefblue-dark px-2 py-1 rounded-md text-sm mb-2">November 18</span>
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-2">Independence Day</h3>
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <p class="text-gray-700">November 18th commemorates Morocco's independence from France. In Chefchaouen, the day is marked with parades, music performances, and cultural exhibitions celebrating Moroccan heritage. Buildings are decorated with Moroccan flags, and there's a festive atmosphere throughout the city.</p>
+                                </div>
+                            </div>
+                            <div class="md:mx-4 mb-4 md:mb-0 order-1 md:order-2 z-10">
+                                <div class="w-16 h-16 rounded-full bg-chefblue flex items-center justify-center text-white font-bold shadow-md">
+                                    <i class="fas fa-flag text-2xl"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 md:pl-8 order-3 hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Life Section -->
+        <section id="daily-life" class="bg-white py-16 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                        <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Daily Life in Chefchaouen</h2>
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div data-aos="fade-right">
+                            <div class="relative">
+                                <img src="./img/chefchaouen-background.jpg" alt="Daily life in Chefchaouen" class="rounded-lg shadow-lg w-full h-auto">
+                                <!-- Caption overlay -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3 rounded-b-lg">
+                                    <p class="text-sm">Locals going about their daily activities in the blue streets of the medina</p>
+                                </div>
+                                <!-- Decorative pattern overlay -->
+                                <div class="absolute inset-0 border-4 border-white rounded-lg pointer-events-none"></div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-left">
+                            <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-bold text-chefblue-dark mb-4">A Day in the Life</h3>
+                                <p class="text-lg mb-6">Life in Chefchaouen moves at a relaxed pace, with daily routines centered around family, work, and community:</p>
+                                
+                                <!-- Timeline of daily life -->
+                                <div class="space-y-6">
+                                    <!-- Morning -->
+                                    <div class="flex">
+                                        <div class="relative flex-shrink-0">
+                                            <div class="w-12 h-12 bg-chefblue-dark rounded-full flex items-center justify-center text-white font-medium mr-4">
+                                                <i class="fas fa-sun"></i>
+                                            </div>
+                                            <div class="absolute top-12 bottom-0 left-1/2 w-0.5 bg-chefblue-light -translate-x-1/2"></div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-chefblue-dark">Morning</h4>
+                                            <p class="mb-2">The day begins with the call to prayer from the city's mosques. Locals visit the daily markets (<em>souks</em>) to purchase fresh produce, bread, and other necessities for the day ahead.</p>
+                                            <p class="text-sm text-gray-600 italic">The morning markets are bustling with activity, as vendors set up their stalls with fresh fruits, vegetables, herbs, and bread.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Midday -->
+                                    <div class="flex">
+                                        <div class="relative flex-shrink-0">
+                                            <div class="w-12 h-12 bg-chefblue rounded-full flex items-center justify-center text-white font-medium mr-4">
+                                                <i class="fas fa-coffee"></i>
+                                            </div>
+                                            <div class="absolute top-12 bottom-0 left-1/2 w-0.5 bg-chefblue-light -translate-x-1/2"></div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-chefblue-dark">Midday</h4>
+                                            <p class="mb-2">Many residents work in traditional crafts, with workshops often passed down through generations. The main meal of the day is usually eaten at lunchtime, followed by a short rest period during the hottest hours.</p>
+                                            <p class="text-sm text-gray-600 italic">Artisan workshops are alive with activity as craftspeople create textiles, leather goods, and woodwork using traditional techniques.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Afternoon -->
+                                    <div class="flex">
+                                        <div class="relative flex-shrink-0">
+                                            <div class="w-12 h-12 bg-chefblue rounded-full flex items-center justify-center text-white font-medium mr-4">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="absolute top-12 bottom-0 left-1/2 w-0.5 bg-chefblue-light -translate-x-1/2"></div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-chefblue-dark">Afternoon</h4>
+                                            <p class="mb-2">Afternoons often include time at local cafés, where residents gather to socialize over mint tea. This is a time for conversation, catching up on news, and perhaps playing cards or board games.</p>
+                                            <p class="text-sm text-gray-600 italic">The ritual of tea preparation and sharing is an important social custom that brings people together.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Evening -->
+                                    <div class="flex">
+                                        <div class="relative flex-shrink-0">
+                                            <div class="w-12 h-12 bg-chefblue-dark rounded-full flex items-center justify-center text-white font-medium mr-4">
+                                                <i class="fas fa-moon"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-chefblue-dark">Evening</h4>
+                                            <p class="mb-2">As temperatures cool, families often take evening walks through the medina or along the river. Dinner is typically eaten later in the evening, and nights are spent with family at home or meeting friends in the plaza.</p>
+                                            <p class="text-sm text-gray-600 italic">The main square, Plaza Uta el-Hammam, comes alive in the evening as both locals and visitors enjoy the cooler temperatures.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Immersion Quiz -->
+        <section class="bg-chefblue-dark text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-center" data-aos="fade-down">Test Your Knowledge</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-12 text-center" data-aos="fade-up" data-aos-delay="300">How much have you learned about Chefchaouen's culture? Take this fun quiz to find out!</p>
+                    
+                    <div class="bg-white/10 p-8 rounded-lg backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="500">
+                        <div id="culture-quiz">
+                            <!-- Question 1 -->
+                            <div class="quiz-question active">
+                                <h3 class="text-xl font-bold mb-4">1. What is the traditional outer robe worn in Chefchaouen called?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center p-3 bg-white/10 rounded-lg cursor-pointer hover:bg-white/20 transition duration-300">
+                                        <input type="radio" name="q1" value="a" class="mr-3">
+                                        <span>Kaftan</span>
+                                    </label>
+                                    <label class="flex items-center p-3 bg-white/10 rounded-lg cursor-pointer hover:bg-white/20 transition duration-300">
+                                        <input type="radio" name="q1" value="b" class="mr-3">
+                                        <span>Djellaba</span>
+                                    </label>
+                                    <label class="flex items-center p-3 bg-white/10 rounded-lg cursor-pointer hover:bg-white/20 transition duration-300">
+                                        <input type="radio" name="q1" value="c" class="mr-3">
+                                        <span>Burnous</span>
+                                    </label>
+                                    <label class="flex items-center p-3 bg-white/10 rounded-lg cursor-pointer hover:bg-white/20 transition duration-300">
+                                        <input type="radio" name="q1" value="d" class="mr-3">
+                                        <span>Takchita</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- More questions will be added dynamically via JavaScript -->
+                            
+                            <div class="mt-8 flex justify-between">
+                                <button id="prev-question" class="px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed hidden">
+                                    <i class="fas fa-arrow-left mr-2"></i> Previous
+                                </button>
+                                <button id="next-question" class="px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition duration-300">
+                                    Next <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                                <button id="submit-quiz" class="px-4 py-2 bg-white text-chefblue-dark rounded-lg hover:bg-sand-light transition duration-300 hidden">
+                                    Submit Quiz <i class="fas fa-check ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Results (Hidden Initially) -->
+                        <div id="quiz-results" class="hidden">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Your Results</h3>
+                            <div class="flex items-center justify-center mb-6">
+                                <div class="w-32 h-32 rounded-full border-4 border-white flex items-center justify-center">
+                                    <span id="score-display" class="text-3xl font-bold">0/5</span>
+                                </div>
+                            </div>
+                            <p id="result-message" class="text-center text-lg mb-6">Thanks for taking the quiz!</p>
+                            <div class="text-center">
+                                <button id="retry-quiz" class="bg-white text-chefblue-dark hover:bg-sand-light px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                                    <i class="fas fa-redo mr-2"></i> Try Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-lg relative overflow-hidden" data-aos="fade-up">
+                <!-- Decorative pattern background -->
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNMjUsMjUgTDQwLDEwIE00MCw0MCBMMjUsMjUgTDEwLDQwIE0xMCwxMCBMMjUsMjUiIHN0cm9rZT0iIzRBN0RBQiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+'); background-repeat: repeat;"></div>
+                </div>
+                
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-serif font-bold text-chefblue-dark mb-6">Experience the Culture of Chefchaouen</h2>
+                        <p class="text-xl max-w-2xl mx-auto">Book a cultural tour and immerse yourself in the rich traditions, cuisine, and crafts of the Blue Pearl with our knowledgeable local guides.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-sand-light p-6 rounded-lg text-center hover:bg-sand transition duration-300 transform hover:-translate-y-1">
+                            <div class="w-16 h-16 bg-chefblue text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-utensils text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-chefblue-dark mb-2">Culinary Experiences</h3>
+                            <p class="text-gray-700 mb-4">Learn to prepare traditional Moroccan dishes with local ingredients and ancient techniques.</p>
+                            <a href="tours.html#culinary" class="text-chefblue-dark font-medium hover:underline inline-flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-sand-light p-6 rounded-lg text-center hover:bg-sand transition duration-300 transform hover:-translate-y-1">
+                            <div class="w-16 h-16 bg-chefblue text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-hands text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-chefblue-dark mb-2">Artisan Workshops</h3>
+                            <p class="text-gray-700 mb-4">Visit local craftspeople and learn traditional weaving, pottery, and leatherwork.</p>
+                            <a href="tours.html#artisan" class="text-chefblue-dark font-medium hover:underline inline-flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-sand-light p-6 rounded-lg text-center hover:bg-sand transition duration-300 transform hover:-translate-y-1">
+                            <div class="w-16 h-16 bg-chefblue text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-home text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-chefblue-dark mb-2">Home Visits</h3>
+                            <p class="text-gray-700 mb-4">Experience authentic Moroccan hospitality with a meal in a local family's home.</p>
+                            <a href="tours.html#homestay" class="text-chefblue-dark font-medium hover:underline inline-flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="tours.html" class="bg-chefblue-dark text-white hover:bg-chefblue transition duration-300 px-8 py-3 rounded-lg font-medium inline-block">Book a Cultural Tour</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">💧</span> Chefchaouen
+                    </h3>
+                    <p class="text-gray-300">Discover the magic of Morocco's blue city nestled in the Rif Mountains.</p>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="history.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> History</a></li>
+                        <li><a href="culture.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Culture</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Gallery</a></li>
+                        <li><a href="tours.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Tours</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-chefblue-light"></i>
+                            <span>info@chefchaouenguide.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-chefblue-light"></i>
+                            <span>+212 539 986 XXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Medina, Chefchaouen, Morocco</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Open daily: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Cultural Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Local Festivals Guide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Traditional Recipes</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cultural Etiquette</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Language Guide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Music & Dance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left">&copy; 2023 Chefchaouen Guide. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-chefblue-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Modals -->
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="sticky top-0 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-chefblue-dark">Traditional Chefchaouen Tagine Recipe</h3>
+                <button id="close-recipe-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <img src="./img/Traditional Chefchaouen cuisine.png" alt="Chefchaouen Tagine" class="w-full h-auto rounded-lg mb-4">
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-sand-light/50 p-4 rounded-lg">
+                        <h4 class="font-bold text-chefblue-dark mb-2 flex items-center">
+                            <i class="fas fa-utensil-spoon mr-2 text-chefblue"></i> Ingredients
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>500g lamb or goat meat, cut into pieces</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>2 large onions, sliced</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>3 cloves garlic, minced</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>3 tbsp olive oil</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>2 tsp each: cumin, paprika, ginger</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>1 tsp each: turmeric, cinnamon</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>Pinch of saffron threads</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>4 potatoes, peeled and quartered</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>3 carrots, sliced</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>2 zucchini, sliced</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>1 cup green peas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>Handful of fresh herbs (parsley, cilantro)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-chefblue-dark mr-2 mt-1"></i>
+                                <span>Salt and pepper to taste</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-chefblue-dark mb-2 flex items-center">
+                            <i class="fas fa-blender mr-2 text-chefblue"></i> Instructions
+                        </h4>
+                        <ol class="space-y-4 list-decimal pl-5">
+                            <li>In a tagine pot or heavy-bottomed casserole, heat olive oil over medium heat.</li>
+                            <li>Add onions and cook until translucent, about 5 minutes.</li>
+                            <li>Add garlic and meat, brown on all sides.</li>
+                            <li>Stir in all the spices, cook for 1 minute until fragrant.</li>
+                            <li>Add enough water to almost cover the meat, bring to a simmer.</li>
+                            <li>Cover and cook on low heat for 1 hour, until meat is tender.</li>
+                            <li>Add potatoes and carrots, cook for 20 minutes.</li>
+                            <li>Add zucchini and peas, cook for another 10-15 minutes until all vegetables are tender.</li>
+                            <li>Garnish with fresh herbs before serving.</li>
+                            <li>Serve hot with freshly baked bread.</li>
+                        </ol>
+                        <p class="mt-4 italic text-gray-700">Note: In Chefchaouen, local mountain herbs and wild vegetables are often added for distinctive regional flavor.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-bold text-chefblue-dark mb-2">Serving Tradition</h4>
+                    <p class="text-gray-700">In Chefchaouen, tagine is traditionally served directly from the cooking vessel, placed in the center of the table for everyone to share. It's typically eaten by hand, using pieces of bread to scoop up the meat, vegetables, and sauce.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Photo Story Modal -->
+    <div id="photo-story-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="sticky top-0 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-chefblue-dark">A Day in Chefchaouen: Photo Story</h3>
+                <button id="close-photo-story-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="photo-story-slider">
+                    <!-- Morning -->
+                    <div class="p-2">
+                        <img src="./img/gallery/morning-market.jpg" alt="Morning market in Chefchaouen" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Morning: The Market Awakens</h4>
+                            <p class="text-gray-700 mt-2">As dawn breaks over the Rif Mountains, Chefchaouen's daily market begins to stir. Farmers from surrounding villages bring fresh produce, merchants arrange their colorful spice displays, and the scent of freshly baked bread fills the air.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Mid-Morning -->
+                    <div class="p-2">
+                        <img src="./img/gallery/artisan-workshop.jpg" alt="Artisan at work in Chefchaouen" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Mid-Morning: Artisans at Work</h4>
+                            <p class="text-gray-700 mt-2">By mid-morning, workshops throughout the medina are alive with activity. Weavers work their looms, creating intricate textiles, while woodcarvers and leatherworkers practice crafts passed down through generations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Noon -->
+                    <div class="p-2">
+                        <img src="./img/gallery/lunch-time.jpg" alt="Family lunch in Chefchaouen" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Noon: Family Meal</h4>
+                            <p class="text-gray-700 mt-2">At midday, families gather for the main meal. A tagine might simmer on the fire, filled with local vegetables and tender meat, while fresh bread is torn and shared around the table. Meals are a time for family connection.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Afternoon -->
+                    <div class="p-2">
+                        <img src="./img/gallery/afternoon-cafe.jpg" alt="Café scene in Chefchaouen" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Afternoon: Café Culture</h4>
+                            <p class="text-gray-700 mt-2">As the afternoon heat settles, locals find respite in cafés dotted throughout the city. Men gather to play cards or backgammon while sipping sweet mint tea. These casual gatherings are central to social life.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Evening -->
+                    <div class="p-2">
+                        <img src="./img/gallery/evening-plaza.jpg" alt="Evening in Plaza Uta el-Hammam" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Evening: Plaza Life</h4>
+                            <p class="text-gray-700 mt-2">As the sun begins to set, Plaza Uta el-Hammam becomes the heart of activity. Families stroll, children play, and the cafés fill with both locals and visitors enjoying the cooler evening temperatures against the backdrop of the Kasbah.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Night -->
+                    <div class="p-2">
+                        <img src="./img/gallery/night-medina.jpg" alt="Nighttime in Chefchaouen's medina" class="w-full h-64 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-chefblue-dark">Night: Peaceful Blue</h4>
+                            <p class="text-gray-700 mt-2">As night falls, the blue streets take on an almost magical quality under the moonlight. The pace slows, with families gathering at home for late dinners. The medina quiets, with only the occasional echo of conversation or laughter from open windows.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <button class="bg-chefblue hover:bg-chefblue-dark text-white px-6 py-2 rounded-lg transition duration-300">
+                        <i class="fas fa-download mr-2"></i> Download Photo Story
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Initialize slider for cuisine images
+            $('.cuisine-slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                fade: true
+            });
+            
+            // Initialize slider for photo story
+            $('.photo-story-slider').slick({
+                dots: true,
+                arrows: true,
+                adaptiveHeight: true
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Craft accordion functionality
+            const craftToggles = document.querySelectorAll('.craft-toggle');
+            
+            craftToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Close other open accordion items
+                    document.querySelectorAll('.craft-content').forEach(item => {
+                        if (item !== content && !item.classList.contains('hidden')) {
+                            item.classList.add('hidden');
+                            item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+            
+            // Table of contents highlight on scroll
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('#table-of-contents a');
+            
+            function highlightTOC() {
+                const scrollPosition = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        tocLinks.forEach(link => {
+                            link.classList.remove('bg-chefblue-light/20', 'border-chefblue');
+                            link.classList.add('border-transparent');
+                            
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('bg-chefblue-light/20', 'border-chefblue');
+                                link.classList.remove('border-transparent');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightTOC);
+            
+            // Recipe modal functionality
+            const recipeBtn = document.getElementById('show-recipe');
+            const recipeModal = document.getElementById('recipe-modal');
+            const closeRecipeModal = document.getElementById('close-recipe-modal');
+            
+            if (recipeBtn && recipeModal && closeRecipeModal) {
+                recipeBtn.addEventListener('click', () => {
+                    recipeModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeRecipeModal.addEventListener('click', () => {
+                    recipeModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Close modal when clicking outside content
+                recipeModal.addEventListener('click', (e) => {
+                    if (e.target === recipeModal) {
+                        recipeModal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Photo story modal functionality
+            const photoStoryBtn = document.getElementById('show-photo-story');
+            const photoStoryModal = document.getElementById('photo-story-modal');
+            const closePhotoStoryModal = document.getElementById('close-photo-story-modal');
+            
+            if (photoStoryBtn && photoStoryModal && closePhotoStoryModal) {
+                photoStoryBtn.addEventListener('click', () => {
+                    photoStoryModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    // Reinitialize slick slider to fix dimensions
+                    $('.photo-story-slider').slick('setPosition');
+                });
+                
+                closePhotoStoryModal.addEventListener('click', () => {
+                    photoStoryModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Close modal when clicking outside content
+                photoStoryModal.addEventListener('click', (e) => {
+                    if (e.target === photoStoryModal) {
+                        photoStoryModal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Audio player functionality (simplified - in a real implementation would use actual audio files)
+            const audioButtons = document.querySelectorAll('.play-audio');
+            
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    // In real implementation, this would play the audio file
+                    alert(`Playing audio for: ${audioId}`);
+                    
+                    // Toggle play/pause icon
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('fa-volume-up')) {
+                        icon.classList.remove('fa-volume-up');
+                        icon.classList.add('fa-pause');
+                    } else {
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-volume-up');
+                    }
+                });
+            });
+            
+            // Quiz functionality
+            const quizQuestions = [
+                {
+                    question: "What is the traditional outer robe worn in Chefchaouen called?",
+                    options: ["Kaftan", "Djellaba", "Burnous", "Takchita"],
+                    correct: "b"
+                },
+                {
+                    question: "Which of these is NOT a type of traditional craft in Chefchaouen?",
+                    options: ["Wool weaving", "Glass blowing", "Leather working", "Woodcarving"],
+                    correct: "b"
+                },
+                {
+                    question: "What is the famous cheese produced in the Chefchaouen region?",
+                    options: ["Camel cheese", "Sheep cheese", "Goat cheese", "Buffalo cheese"],
+                    correct: "c"
+                },
+                {
+                    question: "Which of these musical traditions originated from Andalusian Spain?",
+                    options: ["Gnawa music", "Andalusian classical music", "Ahidous", "Chaabi"],
+                    correct: "b"
+                },
+                {
+                    question: "What is the traditional Berber New Year celebration called?",
+                    options: ["Ashura", "Eid", "Yennayer", "Mawlid"],
+                    correct: "c"
+                }
+            ];
+            
+            let currentQuestionIndex = 0;
+            const nextBtn = document.getElementById('next-question');
+            const prevBtn = document.getElementById('prev-question');
+            const submitBtn = document.getElementById('submit-quiz');
+            const quizContainer = document.getElementById('culture-quiz');
+            const resultsContainer = document.getElementById('quiz-results');
+            const scoreDisplay = document.getElementById('score-display');
+            const resultMessage = document.getElementById('result-message');
+            const retryBtn = document.getElementById('retry-quiz');
+            
+            // Create the rest of the questions (first one is in HTML)
+            function renderQuestions() {
+                const firstQuestion = document.querySelector('.quiz-question');
+                
+                // Create the rest of the questions
+                for (let i = 1; i < quizQuestions.length; i++) {
+                    const question = quizQuestions[i];
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'quiz-question hidden';
+                    
+                    let questionHTML = `
+                        <h3 class="text-xl font-bold mb-4">${i+1}. ${question.question}</h3>
+                        <div class="space-y-3">
+                    `;
+                    
+                    question.options.forEach((option, index) => {
+                        const value = String.fromCharCode(97 + index); // a, b, c, d
+                        questionHTML += `
+                            <label class="flex items-center p-3 bg-white/10 rounded-lg cursor-pointer hover:bg-white/20 transition duration-300">
+                                <input type="radio" name="q${i+1}" value="${value}" class="mr-3">
+                                <span>${option}</span>
+                            </label>
+                        `;
+                    });
+                    
+                    questionHTML += `</div>`;
+                    questionDiv.innerHTML = questionHTML;
+                    firstQuestion.parentNode.appendChild(questionDiv);
+                }
+            }
+            
+            // Render the questions when page loads
+            renderQuestions();
+            
+            // Handle quiz navigation
+            nextBtn.addEventListener('click', () => {
+                const currentQuestion = document.querySelector(`.quiz-question:nth-child(${currentQuestionIndex + 1})`);
+                currentQuestion.classList.add('hidden');
+                
+                currentQuestionIndex++;
+                const nextQuestion = document.querySelector(`.quiz-question:nth-child(${currentQuestionIndex + 1})`);
+                nextQuestion.classList.remove('hidden');
+                
+                prevBtn.classList.remove('hidden');
+                
+                if (currentQuestionIndex === quizQuestions.length - 1) {
+                    nextBtn.classList.add('hidden');
+                    submitBtn.classList.remove('hidden');
+                }
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                const currentQuestion = document.querySelector(`.quiz-question:nth-child(${currentQuestionIndex + 1})`);
+                currentQuestion.classList.add('hidden');
+                
+                currentQuestionIndex--;
+                const prevQuestion = document.querySelector(`.quiz-question:nth-child(${currentQuestionIndex + 1})`);
+                prevQuestion.classList.remove('hidden');
+                
+                if (currentQuestionIndex === 0) {
+                    prevBtn.classList.add('hidden');
+                }
+                
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            });
+            
+            // Submit quiz and show results
+            submitBtn.addEventListener('click', () => {
+                let score = 0;
+                
+                // Check answers
+                quizQuestions.forEach((question, index) => {
+                    const selectedOption = document.querySelector(`input[name="q${index+1}"]:checked`);
+                    if (selectedOption && selectedOption.value === question.correct) {
+                        score++;
+                    }
+                });
+                
+                // Display results
+                scoreDisplay.textContent = `${score}/${quizQuestions.length}`;
+                
+                // Custom message based on score
+                if (score === quizQuestions.length) {
+                    resultMessage.textContent = "Perfect! You're a Chefchaouen culture expert!";
+                } else if (score >= quizQuestions.length * 0.7) {
+                    resultMessage.textContent = "Great job! You know quite a bit about Chefchaouen's culture.";
+                } else if (score >= quizQuestions.length * 0.5) {
+                    resultMessage.textContent = "Good effort! You've learned some basics about Chefchaouen's culture.";
+                } else {
+                    resultMessage.textContent = "Keep exploring! There's so much more to learn about Chefchaouen's rich culture.";
+                }
+                
+                // Hide quiz, show results
+                quizContainer.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+            });
+            
+            // Retry quiz
+            retryBtn.addEventListener('click', () => {
+                // Reset state
+                currentQuestionIndex = 0;
+                
+                // Uncheck all radio buttons
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+                
+                // Show first question, hide others
+                document.querySelectorAll('.quiz-question').forEach((question, index) => {
+                    if (index === 0) {
+                        question.classList.remove('hidden');
+                    } else {
+                        question.classList.add('hidden');
+                    }
+                });
+                
+                // Reset buttons
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+                
+                // Hide results, show quiz
+                resultsContainer.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Video play button (simulated)
+            const videoPlayBtn = document.querySelector('.video-play-btn');
+            if (videoPlayBtn) {
+                videoPlayBtn.addEventListener('click', function() {
+                    alert('This would play a video of traditional music performance in a real implementation.');
+                });
+            }
+            
+            // Show/hide clothing gallery (simulated)
+            const clothingGalleryBtn = document.getElementById('show-clothing-gallery');
+            if (clothingGalleryBtn) {
+                clothingGalleryBtn.addEventListener('click', function() {
+                    alert('This would open a gallery of traditional clothing in a real implementation.');
+                });
+            }
+            
+            // Learn more phrases button (simulated)
+            const learnMorePhrasesBtn = document.getElementById('learn-more-phrases');
+            if (learnMorePhrasesBtn) {
+                learnMorePhrasesBtn.addEventListener('click', function() {
+                    alert('This would lead to a more comprehensive language guide in a real implementation.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

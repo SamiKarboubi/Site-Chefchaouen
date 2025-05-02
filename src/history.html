@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Chefchaouen: The Blue Pearl of Morocco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chefblue: {
+                            light: '#8FB5D9',
+                            DEFAULT: '#4A7DAB',
+                            dark: '#2C5282',
+                        },
+                        sand: {
+                            light: '#F5EFE0',
+                            DEFAULT: '#E6D9B8',
+                            dark: '#C4B28C',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-sand-light">
+    <!-- Top Info Bar -->
+    <div class="bg-chefblue-dark text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center text-sm">
+            <div class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Chefchaouen, Morocco</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="mailto:info@chefchaouenguide.com" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-envelope mr-1"></i> info@chefchaouenguide.com
+                </a>
+                <a href="tel:+212539986XXX" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-phone mr-1"></i> +212 539 986 XXX
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-chefblue-dark flex items-center">
+                <span class="text-3xl mr-2">💧</span> Chefchaouen
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Home</a></li>
+                <li><a href="history.html" class="font-medium text-chefblue hover:text-chefblue-dark border-b-2 border-chefblue transition duration-300">History</a></li>
+                <li><a href="culture.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Culture</a></li>
+                <li><a href="gallery.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Gallery</a></li>
+                <li><a href="tours.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Tours</a></li>
+                <li><a href="contact.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Language Selector -->
+            <div class="hidden md:flex items-center ml-6">
+                <select id="language-selector" class="bg-transparent border-none text-gray-600 focus:outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="container mx-auto px-4 py-2">
+                <li><a href="index.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Home</a></li>
+                <li><a href="history.html" class="block py-2 font-medium text-chefblue">History</a></li>
+                <li><a href="culture.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Culture</a></li>
+                <li><a href="gallery.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Gallery</a></li>
+                <li><a href="tours.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Tours</a></li>
+                <li><a href="contact.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Contact</a></li>
+                <li>
+                    <select id="mobile-language-selector" class="w-full py-2 bg-transparent text-gray-600 focus:outline-none border-t border-gray-200 mt-2">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header with Background Pattern -->
+        <section class="bg-chefblue-dark text-white py-20 relative overflow-hidden">
+            <!-- Decorative Pattern Background -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNMjUsMjUgTDQwLDEwIE00MCw0MCBMMjUsMjUgTDEwLDQwIE0xMCwxMCBMMjUsMjUiIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+'); background-repeat: repeat;"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-down">The History of Chefchaouen</h1>
+                <p class="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">Discover the fascinating past of Morocco's blue city and how it evolved through centuries of cultural exchange and transformation</p>
+                
+                <!-- Quick Navigation -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#foundation" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-landmark mr-2"></i> Foundation
+                    </a>
+                    <a href="#blue-city" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-paint-brush mr-2"></i> The Blue City
+                    </a>
+                    <a href="#historical-sites" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-monument mr-2"></i> Historical Sites
+                    </a>
+                    <a href="#historical-tour" class="bg-sand-dark text-chefblue-dark px-4 py-2 rounded-full transition duration-300 flex items-center font-medium">
+                        <i class="fas fa-walking mr-2"></i> Book Historical Tour
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-sand-light to-transparent"></div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">A City of Rich Heritage</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
+                    <p class="text-lg mb-6">Nestled in the Rif Mountains of northern Morocco, Chefchaouen stands as a living testament to centuries of diverse cultural influences. Known worldwide for its striking blue-washed buildings, this enchanting city has a complex history that weaves together Moorish, Jewish, Spanish, and Berber traditions.</p>
+                    
+                    <p class="text-lg mb-6">From its origins as a small fortress town to its emergence as one of Morocco's most beloved tourist destinations, Chefchaouen's story is one of resilience, cultural preservation, and adaptation. The city's unique character has been shaped by waves of migration, periods of isolation, foreign occupation, and the enduring spirit of its inhabitants.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-8">
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-map-marked-alt text-chefblue mr-3"></i> Geographic Setting
+                            </h3>
+                            <p class="text-gray-700">Situated at an elevation of approximately 564 meters (1,850 feet) in the Rif Mountains, Chefchaouen's location has played a crucial role in its development and history. The city is nestled between two mountain peaks that resemble horns, giving the city its name - "Chefchaouen" derives from the Berber words "ichawen" (horns).</p>
+                        </div>
+                        
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-users text-chefblue mr-3"></i> Cultural Significance
+                            </h3>
+                            <p class="text-gray-700">Throughout its history, Chefchaouen has served as a cultural crossroads where Andalusian, Moroccan, and Berber traditions have blended to create a unique cultural identity. The city's architecture, cuisine, handicrafts, and social customs reflect this rich multicultural heritage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Timeline Section -->
+<section id="foundation" class="bg-white py-16 scroll-mt-24">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-center mb-12">
+        <div class="h-0.5 bg-chefblue-light w-12"></div>
+        <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">A Journey Through Time</h2>
+        <div class="h-0.5 bg-chefblue-light w-12"></div>
+      </div>
+  
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+        <!-- Timeline Entry -->
+        <!-- Each block follows the same pattern: bg, heading, date badge, text -->
+        <!-- You can duplicate and adapt as needed -->
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Before the City</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">Before 1471</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Long before Chefchaouen existed, the region was home to Berber tribes, thriving on its fertile valleys and strategic trade routes.</p>
+            <p>Archaeological traces reveal settlements dating back to prehistoric times, rooted in the Rif mountains.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Birth of Chefchaouen</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1471</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Founded by Moulay Ali Ben Rachid, Chefchaouen began as a fortress to resist Portuguese invasions. The town's name, from Berber "Ichawen" (goat horns), echoes the surrounding peaks.</p>
+            <p>A medina and kasbah formed the city’s core, enclosed by protective walls.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Waves of Refuge</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1492-1496</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Muslim and Jewish refugees, fleeing the Spanish Reconquista, brought Andalusian art, culture, and architecture to Chefchaouen.</p>
+            <p>The city expanded with new neighborhoods and vibrant crafts rooted in their heritage.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Andalusian Rise</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">16th Century</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Chefchaouen blossomed as a cultural hub. The Grand Mosque was erected, and Sufi brotherhoods shaped its spiritual life.</p>
+            <p>The town gained a reputation as a sacred, scholarly place.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Centuries of Solitude</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">16th–19th C.</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">For over 300 years, the city closed itself to outsiders, especially Christians. This protected its culture and Andalusian identity.</p>
+            <p>It remained untouched while Morocco around it evolved rapidly.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">First Foreign Glimpse</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1860</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Spanish troops entered during the Spanish-Moroccan War, and a few Europeans, including explorer Charles de Foucauld, began documenting the mysterious town.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="600">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Colonial Era</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1920–1956</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Under Spanish rule, Chefchaouen saw modern infrastructure and institutions emerge, while still preserving its soul.</p>
+            <p>Spanish remains widely spoken among older residents today.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="700">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">A New Chapter</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1956</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Morocco’s independence marked a new era. Chefchaouen integrated into the modern state while remaining rooted in tradition.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="800">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Economic Shift</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1970s</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Cannabis cultivation became a major livelihood in the Rif, providing income amid economic struggles despite its legal gray area.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="900">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Tourism Awakens</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">1980s–1990s</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">Travelers discovered Chefchaouen's blue-painted charm. The medina adapted, offering riads and guesthouses for adventurers.</p>
+          </div>
+        </div>
+  
+        <div class="bg-sand-light rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="1000">
+          <div class="bg-chefblue-dark text-white p-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold">Global Spotlight</h3>
+            <span class="bg-white/20 text-sm px-3 py-1 rounded-full backdrop-blur-sm">2000s–Now</span>
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">With Instagram and global travel booming, Chefchaouen has become a global icon. Its dreamlike hues attract photographers, influencers, and tourists from around the world.</p>
+            <p>Despite its fame, the city continues to honor its traditions and peaceful rhythms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+        <!-- The Blue City Section -->
+        <section id="blue-city" class="bg-white py-16 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Why Is Chefchaouen Blue?</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12" data-aos="fade-up">
+                        <div class="rounded-lg overflow-hidden shadow-xl">
+                            <img src="./img/chefchaouen.jpg" alt="Blue streets of Chefchaouen" class="w-full h-auto">
+                        </div>
+                        <div>
+                            <p class="text-lg mb-6">The distinctive blue color of Chefchaouen's buildings is one of the city's most famous features, attracting photographers and travelers from around the world. But when did this tradition begin, and why?</p>
+                            
+                            <p class="text-lg mb-6">Interestingly, the blue-washing of Chefchaouen is not an ancient tradition dating back to the city's founding. Historical records and photographs indicate that many buildings in Chefchaouen were white or natural earthen colors until the mid-20th century. The widespread blue-washing appears to have begun in earnest in the 1930s and became more prevalent after the 1970s.</p>
+                            
+                            <p class="text-lg">Several theories exist about why the residents began painting their city blue, and the truth likely involves a combination of these factors:</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-star-of-david text-chefblue mr-3"></i> Jewish Influence
+                            </h3>
+                            <p class="text-gray-700 mb-4">One of the most widely accepted theories attributes the blue color to Jewish refugees who settled in Chefchaouen during the 1930s, fleeing Nazi persecution in Europe. In Jewish tradition, the color blue (tekhelet) holds special significance, symbolizing the sky, heaven, and divine presence.</p>
+                            <p class="text-gray-700">The Jewish community in Chefchaouen began painting their homes blue as a reminder of God's power and the sky above. Although most of the Jewish population left for Israel after 1948, the tradition was continued by the remaining residents.</p>
+                        </div>
+                        
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-bug-slash text-chefblue mr-3"></i> Mosquito Repellent
+                            </h3>
+                            <p class="text-gray-700 mb-4">A practical explanation suggests that the blue color, particularly when created using a mixture containing copper sulfate, helps repel mosquitoes and other insects that thrive in the warm climate.</p>
+                            <p class="text-gray-700">While modern science doesn't fully support this theory (mosquitoes are more deterred by certain scents than colors), the belief may have contributed to the spread of the practice throughout the city.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-temperature-low text-chefblue mr-3"></i> Cooling Effect
+                            </h3>
+                            <p class="text-gray-700 mb-4">The blue color may have been chosen for its cooling psychological effect in the hot climate of Morocco. Light colors reflect sunlight rather than absorbing it, and blue in particular creates a sense of coolness and tranquility.</p>
+                            <p class="text-gray-700">This practical consideration would have made the city more comfortable during the hot summer months, especially before the advent of modern cooling systems.</p>
+                        </div>
+                        
+                        <div class="bg-sand-light p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                                <i class="fas fa-water text-chefblue mr-3"></i> Water Symbol
+                            </h3>
+                            <p class="text-gray-700 mb-4">In the arid landscape of Morocco, water is precious and highly valued. The blue color may symbolize the water resources that made settlement in this mountain region possible.</p>
+                            <p class="text-gray-700">Chefchaouen is blessed with abundant water from mountain springs, and the blue color could be a celebration of this life-giving resource that has sustained the city throughout its history.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                            <i class="fas fa-camera text-chefblue mr-3"></i> Tourism and Cultural Identity
+                        </h3>
+                        <p class="text-lg mb-4">Whatever the original reasons, the blue color has become an integral part of Chefchaouen's identity and a major draw for tourism. The tradition continues today with residents regularly repainting their homes in various shades of blue, from pale sky blue to deep indigo.</p>
+                        <p class="text-lg mb-4">The blue-washing has evolved into a community activity, with neighbors often helping each other apply fresh coats of paint. The city government provides blue paint to residents to maintain this unique tradition that has become central to the city's cultural and economic life.</p>
+                        <p class="text-lg">As tourism has grown, the blue has intensified and spread to more areas of the city, creating the magical blue wonderland that has made Chefchaouen famous worldwide as "The Blue Pearl of Morocco."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Figures Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="flex items-center justify-center mb-12">
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+                <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Key Historical Figures</h2>
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Moulay Ali Ben Rachid -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                    <div class=" bg-chefblue-light flex items-center justify-center">
+                        <img src="./img/MoulayAliCherif.jpg" alt="Blue streets of Chefchaouen" class="w-fit h-60">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-2">Moulay Ali Ben Rachid</h3>
+                        <p class="text-sm text-gray-500 mb-4">1471-1511</p>
+                        <p class="text-gray-700 mb-4">The founder of Chefchaouen, Moulay Ali Ben Rachid was a descendant of the Prophet Muhammad and a Sharif (noble) from Granada. After the fall of Islamic rule in Andalusia, he established Chefchaouen as a base to fight Portuguese expansion in northern Morocco.</p>
+                        <p class="text-gray-700">His leadership laid the foundation for the city's development as a center of Andalusian culture in Morocco. His tomb is still venerated in the city today.</p>
+                    </div>
+                </div>
+                
+                <!-- Moulay Ali Ben Rashid's Wife -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-chefblue-light flex items-center justify-center">
+                        <img src="./img/lala-zahra-sidi-ahmed.png" alt="Blue streets of Chefchaouen" class="w-fit h-60">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-2">Lalla Zahra Sidi Hmad</h3>
+                        <p class="text-sm text-gray-500 mb-4">Late 15th century</p>
+                        <p class="text-gray-700 mb-4">The wife of Moulay Ali Ben Rachid played a crucial role in the early development of Chefchaouen. After her husband's death, she continued his work, overseeing the construction of the city's water system and several important buildings.</p>
+                        <p class="text-gray-700">She is credited with establishing the first mosque in the city and promoting education. Her leadership during a critical period helped ensure the survival and growth of the young settlement.</p>
+                    </div>
+                </div>
+                
+                <!-- Charles de Foucauld -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-chefblue-light flex items-center justify-center">
+                        <img src="./img/Charles_de_Foucauld.jpg" alt="Blue streets of Chefchaouen" class="w-fit h-60">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-2">Charles de Foucauld</h3>
+                        <p class="text-sm text-gray-500 mb-4">1858-1916</p>
+                        <p class="text-gray-700 mb-4">A French explorer and Catholic religious figure who visited Chefchaouen in 1883 disguised as a rabbi. At the time, Christians were forbidden to enter the city, making his visit a dangerous undertaking.</p>
+                        <p class="text-gray-700">His detailed descriptions and sketches of Chefchaouen provided the Western world with some of the first documentation of this isolated city, contributing significantly to historical records of the period.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Sites Section -->
+        <section id="historical-sites" class="bg-white py-16 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Historical Sites to Visit</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Kasbah -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                        <img src="./img/KASBAH2.jpg" alt="Kasbah Museum" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Kasbah Museum</h3>
+                            <p class="text-gray-700 mb-4">The 15th-century fortress and dungeon in the heart of the medina now houses a fascinating ethnographic museum showcasing local artifacts, ancient weapons, and traditional clothing.</p>
+                            <p class="text-gray-700 mb-4">Built by Moulay Ali Ben Rachid in 1471, the Kasbah features beautiful gardens, a small ethnographic museum, and impressive Andalusian-influenced architecture. The tower offers panoramic views of the city.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i> Open: 9:00 AM - 6:00 PM
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-coins mr-2"></i> Entry: 60 MAD
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plaza Uta el-Hammam -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <img src="./img/Plaza Uta el-Hammam.jpg" alt="Plaza Uta el-Hammam" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Plaza Uta el-Hammam</h3>
+                            <p class="text-gray-700 mb-4">The main square of Chefchaouen has been the center of city life for centuries. Surrounded by cafes and restaurants, it's home to the Grand Mosque and the Kasbah.</p>
+                            <p class="text-gray-700 mb-4">Named after the Arabic word for "bath," as public baths were once located here, the plaza is lined with restaurants and cafes housed in traditional buildings. It's the perfect place to observe daily life and the meeting point for locals and visitors alike.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Central Medina
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-info-circle mr-2"></i> Always accessible
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grand Mosque -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                        <img src="./img/Grande-Mosquee-de-Chefchaouen-1.jpg" alt="Grand Mosque" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Grand Mosque</h3>
+                            <p class="text-gray-700 mb-4">Built in the 15th century, the Grand Mosque is one of the oldest buildings in Chefchaouen. Its distinctive octagonal minaret reflects the Andalusian influence on the city's architecture.</p>
+                            <p class="text-gray-700 mb-4">While non-Muslims cannot enter the mosque itself, the exterior is worth admiring for its beautiful design. The call to prayer emanating from this historic mosque five times daily has been a constant in city life for centuries.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Plaza Uta el-Hammam
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-info-circle mr-2"></i> Exterior viewing only
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Mosque -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="600">
+                        <img src="./img/Spanish Mosque.jpg" alt="Spanish Mosque" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Spanish Mosque</h3>
+                            <p class="text-gray-700 mb-4">Built in the 1920s during the Spanish occupation but never used, this mosque sits on a hill overlooking the city, offering spectacular panoramic views of Chefchaouen.</p>
+                            <p class="text-gray-700 mb-4">The 30-minute hike to reach the mosque is rewarded with the best views of the blue city, especially at sunset. The abandoned building stands as a reminder of the Spanish colonial period in northern Morocco.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-hiking mr-2"></i> 30-minute hike from medina
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-info-circle mr-2"></i> Best at sunset
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ras El Ma (Water Source) -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="800">
+                        <img src="./img/ras el ma.jpg" alt="Ras El Ma" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Ras El Ma (Water Source)</h3>
+                            <p class="text-gray-700 mb-4">This natural spring at the eastern edge of the medina has provided water to Chefchaouen since its founding. The name literally means "head of the water" in Arabic.</p>
+                            <p class="text-gray-700 mb-4">Local women still gather here to wash clothes in the traditional way. Following the stream leads to small waterfalls and a path to the Spanish Mosque. The site demonstrates the importance of water resources in the city's history.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Eastern edge of medina
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-info-circle mr-2"></i> Always accessible
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mellah (Jewish Quarter) -->
+                    <div class="bg-sand-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="1000">
+                        <img src="./img/Mellah.jpg" alt="Mellah" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Mellah (Jewish Quarter)</h3>
+                            <p class="text-gray-700 mb-4">The historic Jewish quarter of Chefchaouen offers a glimpse into the multicultural past of the city. Though the Jewish community has largely departed, their influence remains visible in the architecture and blue colors.</p>
+                            <p class="text-gray-700 mb-4">The area features distinctive architectural elements like wrought-iron window grilles and interior courtyards. A small cemetery and the site of a former synagogue can still be visited, though little remains of the original structures.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Northeastern medina
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-info-circle mr-2"></i> Best with a guide
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Artifacts Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="flex items-center justify-center mb-12">
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+                <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Historical Artifacts</h2>
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right">
+                    <h3 class="text-xl font-bold text-chefblue-dark mb-4">Andalusian Craftsmanship</h3>
+                    <p class="text-gray-700">The Kasbah Museum houses a collection of artifacts that showcase the Andalusian influence on Chefchaouen's material culture. These include intricately carved wooden furniture, ceramic tiles with geometric patterns, and metalwork featuring distinctive Moorish designs.</p>
+                    <p class="text-gray-700 mt-2">These artifacts demonstrate how refugees from Spain brought their artistic traditions to Chefchaouen, creating a unique fusion of Moroccan and Andalusian styles that continues to influence local craftsmanship today.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left">
+                    <h3 class="text-xl font-bold text-chefblue-dark mb-4">Traditional Textiles</h3>
+                    <p class="text-gray-700">Chefchaouen is renowned for its distinctive wool garments and textiles, particularly the handwoven blankets and clothing made from local sheep's wool. The city's textile tradition dates back centuries and reflects both Berber and Andalusian influences.</p>
+                    <p class="text-gray-700 mt-2">The traditional looms used by local artisans have changed little over the centuries. Historical examples of these textiles, featuring distinctive blue and white patterns, can be viewed in the Ethnographic Museum, providing insight into the daily life of past generations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oral History Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Oral History & Legends</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-sand-light p-8 rounded-lg shadow-md mb-8" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                            <i class="fas fa-book-open text-chefblue mr-3"></i> The Legend of the Forbidden City
+                        </h3>
+                        <p class="text-lg italic mb-4">"For centuries, Chefchaouen was known as the forbidden city to Christians. It is said that a European who dared to enter would be killed or imprisoned immediately. The city's isolation became legendary, and tales spread of a mysterious blue city hidden in the mountains that no outsider had ever seen."</p>
+                        <p class="text-gray-700">This legend has some basis in historical fact. Until the Spanish occupation in the 20th century, Chefchaouen was indeed closed to non-Muslims, with only a handful of disguised European explorers managing to enter and document the city. This isolation helped preserve the city's unique character and traditions.</p>
+                    </div>
+                    
+                    <div class="bg-sand-light p-8 rounded-lg shadow-md mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                            <i class="fas fa-book-open text-chefblue mr-3"></i> The Blessing of the Blue
+                        </h3>
+                        <p class="text-lg italic mb-4">"The elders tell of a time when a great drought threatened the city. The people prayed for rain, and a wise rabbi suggested painting the buildings blue to resemble the sky and remind God of the need for water. Soon after the city turned blue, the rains came, saving the crops and the people. Since then, the blue has been maintained as a symbol of divine blessing."</p>
+                        <p class="text-gray-700">While this story may be apocryphal, it reflects the spiritual significance often attributed to the blue color in local folklore. The connection between the blue buildings and water—a precious resource in this mountainous region—appears in many local stories.</p>
+                    </div>
+                    
+                    <div class="bg-sand-light p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                            <i class="fas fa-book-open text-chefblue mr-3"></i> The Guardian of the Mountains
+                        </h3>
+                        <p class="text-lg italic mb-4">"It is said that a powerful djinn (spirit) lives in the mountains surrounding Chefchaouen, protecting the city from invaders. The blue color of the buildings is meant to appease this spirit, who loves the color of the sky. Those who respect the traditions of the blue city will receive the djinn's blessing, while those who disrespect them may face misfortune."</p>
+                        <p class="text-gray-700">This legend reflects the blend of Islamic, Jewish, and pre-Islamic Berber beliefs that have shaped the cultural landscape of Chefchaouen. Supernatural protectors and mountain spirits feature prominently in the folklore of the Rif region.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Tour CTA Section -->
+        <section id="historical-tour" class="bg-chefblue-dark text-white py-16 scroll-mt-24">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6" data-aos="fade-down">Experience the History of Chefchaouen</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Book a guided historical tour and discover the fascinating stories behind the blue walls with our knowledgeable local guides.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-4xl mb-4 text-sand-light">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">3-Hour Historical Tour</h3>
+                        <p class="text-white/80 mb-4">Explore the key historical sites of Chefchaouen's medina with expert commentary on the city's fascinating past.</p>
+                        <p class="font-bold text-sand-light text-lg">From $35 per person</p>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-4xl mb-4 text-sand-light">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Full-Day Historical Immersion</h3>
+                        <p class="text-white/80 mb-4">A comprehensive tour covering the complete history of Chefchaouen, including visits to all major historical sites and hidden gems.</p>
+                        <p class="font-bold text-sand-light text-lg">From $65 per person</p>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-4xl mb-4 text-sand-light">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Historical Photography Tour</h3>
+                        <p class="text-white/80 mb-4">Combine history and photography with this specialized tour focusing on the most photogenic historical locations.</p>
+                        <p class="font-bold text-sand-light text-lg">From $45 per person</p>
+                    </div>
+                </div>
+                
+                <a href="tours.html#booking-form" class="bg-white text-chefblue-dark hover:bg-sand hover:text-chefblue-dark px-8 py-3 rounded-lg font-medium transition duration-300 inline-block" data-aos="zoom-in" data-aos-delay="600">Book a Historical Tour</a>
+            </div>
+        </section>
+
+        <!-- Historical Resources Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="flex items-center justify-center mb-12">
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+                <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Further Historical Resources</h2>
+                <div class="h-0.5 bg-chefblue-light w-12"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                        <i class="fas fa-book text-chefblue mr-3"></i> Recommended Reading
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">The Blue City: A History of Chefchaouen</p>
+                                <p class="text-sm text-gray-600">by Mohammed El Moutawakil (2010)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Andalusian Exile: The Moorish Diaspora in Morocco</p>
+                                <p class="text-sm text-gray-600">by Isabella García (2015)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">The Jews of Northern Morocco</p>
+                                <p class="text-sm text-gray-600">by David Cohen (2008)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Spanish Morocco: Colonial History and Legacy</p>
+                                <p class="text-sm text-gray-600">by Antonio Fernández (2012)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                        <i class="fas fa-film text-chefblue mr-3"></i> Documentaries & Films
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">The Blue Pearl: Chefchaouen's Hidden History</p>
+                                <p class="text-sm text-gray-600">National Geographic (2018)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Andalusian Echoes: The Legacy of Moorish Spain in Morocco</p>
+                                <p class="text-sm text-gray-600">BBC Documentary (2016)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Colors of Morocco: The Story Behind Chefchaouen's Blue</p>
+                                <p class="text-sm text-gray-600">Travel Channel (2019)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">The Forbidden City: Chefchaouen Before Tourism</p>
+                                <p class="text-sm text-gray-600">Independent Documentary (2014)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto mt-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-chefblue-dark mb-4 flex items-center">
+                        <i class="fas fa-university text-chefblue mr-3"></i> Museums & Archives
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Kasbah Ethnographic Museum</p>
+                                <p class="text-sm text-gray-600">Chefchaouen, Morocco - Houses the most comprehensive collection of artifacts related to the city's history.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">National Library of Morocco</p>
+                                <p class="text-sm text-gray-600">Rabat, Morocco - Contains historical documents and manuscripts related to Chefchaouen's founding and development.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Andalusian Archives</p>
+                                <p class="text-sm text-gray-600">Granada, Spain - Holds records of the Moorish exodus from Spain, including documents related to the founding families of Chefchaouen.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-chefblue mt-1 mr-2"></i>
+                            <div>
+                                <p class="font-medium">Spanish Colonial Archives</p>
+                                <p class="text-sm text-gray-600">Madrid, Spain - Contains extensive documentation from the Spanish Protectorate period, including maps, photographs, and administrative records of Chefchaouen.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Historical FAQs</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                
+                <div class="max-w-3xl mx-auto space-y-6" data-aos="fade-up">
+                    <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center focus:outline-none">
+                            <h3 class="text-lg font-bold text-chefblue-dark">When exactly did Chefchaouen turn blue?</h3>
+                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-4">
+                            <p class="text-gray-700">The blue-washing of Chefchaouen was not a single event but a gradual process. Historical photographs from the early 20th century show that many buildings were white or natural earthen colors. The blue began appearing more prominently in the 1930s, possibly introduced by Jewish refugees. The practice became more widespread in the 1970s and 1980s, and intensified further with the growth of tourism in the 1990s and 2000s. Today, the blue is maintained and refreshed regularly by residents and the city government.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center focus:outline-none">
+                            <h3 class="text-lg font-bold text-chefblue-dark">Was Chefchaouen really forbidden to non-Muslims?</h3>
+                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-4">
+                            <p class="text-gray-700">Yes, for most of its history from the 15th to the early 20th century, Chefchaouen was indeed closed to non-Muslims. The city maintained a policy of isolation, partly due to religious concerns and partly as resistance against European colonial powers. Christians who attempted to enter risked imprisonment or death. Only a handful of European explorers, such as Charles de Foucauld in 1883 (disguised as a rabbi), managed to enter the city and document it before the Spanish occupation in 1920. This long period of isolation helped preserve the city's unique cultural character.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center focus:outline-none">
+                            <h3 class="text-lg font-bold text-chefblue-dark">What happened to the Jewish community of Chefchaouen?</h3>
+                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-4">
+                            <p class="text-gray-700">The Jewish community of Chefchaouen, which had been present since the city's early days and grew with refugees from Spain in the 15th century and Europe in the 1930s, largely departed after the creation of Israel in 1948. Most Jewish residents emigrated to Israel, France, or Canada during the 1950s and 1960s. Today, very few, if any, Jewish residents remain in Chefchaouen, though their cultural influence persists in the architecture, crafts, and possibly the blue color tradition. The former Jewish quarter (Mellah) still exists, and a small cemetery remains as evidence of this once-vibrant community.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center focus:outline-none">
+                            <h3 class="text-lg font-bold text-chefblue-dark">How did the Spanish occupation affect Chefchaouen?</h3>
+                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-4">
+                            <p class="text-gray-700">The Spanish occupation (1920-1956) had significant impacts on Chefchaouen. It ended the city's long isolation, introducing modern infrastructure like electricity and improved water systems. The Spanish built new administrative buildings, schools, and the Spanish Mosque. They also documented the city extensively through photography and research. The Spanish language became widespread and is still spoken by many older residents today. While some aspects of Spanish rule were oppressive, the period also created cultural connections that persist in cuisine, language, and architecture. After Moroccan independence in 1956, many Spanish residents left, but their influence remains visible in the city.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center focus:outline-none">
+                            <h3 class="text-lg font-bold text-chefblue-dark">What is the significance of the Kasbah in Chefchaouen's history?</h3>
+                            <i class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-4">
+                            <p class="text-gray-700">The Kasbah (fortress) is the original structure around which Chefchaouen was built in 1471. Founded by Moulay Ali Ben Rachid, it served as both a defensive structure against Portuguese invasions and as the administrative center of the new settlement. The Kasbah housed the city's rulers and garrison, protected the population during times of conflict, and served as a symbol of authority. Over the centuries, it was expanded and modified, particularly during the 18th century. Today, the restored Kasbah houses an ethnographic museum showcasing the city's history and culture. Its gardens, tower, and architecture make it one of the most important historical sites in Chefchaouen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-chefblue-dark text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6" data-aos="fade-down">Stay Updated</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Subscribe to our newsletter for historical articles, event announcements, and updates about Chefchaouen.</p>
+                
+                <div class="max-w-xl mx-auto" data-aos="zoom-in" data-aos-delay="400">
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Your Email Address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800" required>
+                        <button type="submit" class="bg-sand-dark text-chefblue-dark hover:bg-sand transition duration-300 px-6 py-3 rounded-lg font-medium">Subscribe</button>
+                    </form>
+                    <p class="text-sm mt-4 text-white/80">We respect your privacy and will never share your information. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">💧</span> Chefchaouen
+                    </h3>
+                    <p class="text-gray-300">Discover the magic of Morocco's blue city nestled in the Rif Mountains.</p>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="history.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> History</a></li>
+                        <li><a href="culture.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Culture</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Gallery</a></li>
+                        <li><a href="tours.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Tours</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-chefblue-light"></i>
+                            <span>info@chefchaouenguide.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-chefblue-light"></i>
+                            <span>+212 539 986 XXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Medina, Chefchaouen, Morocco</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Open daily: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Historical Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Historical Archives</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Research Publications</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Historical Photos</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Oral History Project</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Educational Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left">&copy; 2023 Chefchaouen Guide. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-chefblue-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Cookie Consent Dialog -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center z-50 transform translate-y-full transition-transform duration-500">
+        <div>
+            <p class="text-gray-800">We use cookies to improve your experience on our site. By continuing to browse, you agree to our <a href="#" class="text-chefblue-dark underline">cookie policy</a>.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex space-x-2">
+            <button id="cookie-accept" class="bg-chefblue-dark text-white px-4 py-2 rounded-lg">Accept</button>
+            <button id="cookie-decline" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg">Decline</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // FAQ accordion functionality
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Close other open accordion items
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item !== content && !item.classList.contains('hidden')) {
+                            item.classList.add('hidden');
+                            item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Cookie consent
+            const cookieConsent = document.getElementById('cookie-consent');
+            const cookieAccept = document.getElementById('cookie-accept');
+            const cookieDecline = document.getElementById('cookie-decline');
+            
+            // Show cookie consent if not previously accepted
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    cookieConsent.classList.remove('translate-y-full');
+                }, 1000);
+            }
+            
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.classList.add('translate-y-full');
+            });
+            
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.classList.add('translate-y-full');
+            });
+        });
+    </script>
+</body>
+</html>

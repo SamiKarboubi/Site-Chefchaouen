@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chefchaouen - The Blue Pearl of Morocco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              chefblue: {
+                light: "#8FB5D9",
+                DEFAULT: "#4A7DAB",
+                dark: "#2C5282",
+              },
+              sand: {
+                light: "#F5EFE0",
+                DEFAULT: "#E6D9B8",
+                dark: "#C4B28C",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Merriweather", "serif"],
+            },
+            animation: {
+              "fade-in": "fadeIn 1s ease-in-out",
+              "slide-up": "slideUp 0.5s ease-in-out",
+              "slide-down": "slideDown 0.5s ease-in-out",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              slideDown: {
+                "0%": { transform: "translateY(-20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body class="font-sans text-gray-800 bg-sand-light">
+    <!-- Top Info Bar -->
+    <div class="bg-chefblue-dark text-white py-2 px-4">
+      <div class="container mx-auto flex justify-between items-center text-sm">
+        <div class="flex items-center">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <span>Chefchaouen, Morocco</span>
+        </div>
+        <div class="flex space-x-4">
+          <a
+            href="mailto:info@chefchaouenguide.com"
+            class="hover:text-sand-light transition duration-300"
+          >
+            <i class="fas fa-envelope mr-1"></i> info@chefchaouenguide.com
+          </a>
+          <a
+            href="tel:+212539986XXX"
+            class="hover:text-sand-light transition duration-300"
+          >
+            <i class="fas fa-phone mr-1"></i> +212 539 986 XXX
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="text-2xl font-serif font-bold text-chefblue-dark flex items-center"
+        >
+          <span class="text-3xl mr-2">💧</span> Chefchaouen
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-700 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-8">
+          <li>
+            <a
+              href="index.html"
+              class="font-medium text-chefblue hover:text-chefblue-dark border-b-2 border-chefblue transition duration-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="history.html"
+              class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300"
+              >History</a
+            >
+          </li>
+          <li>
+            <a
+              href="culture.html"
+              class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300"
+              >Culture</a
+            >
+          </li>
+          <li>
+            <a
+              href="gallery.html"
+              class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="tours.html"
+              class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300"
+              >Tours</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Language Selector -->
+        <div class="hidden md:flex items-center ml-6">
+          <select
+            id="language-selector"
+            class="bg-transparent border-none text-gray-600 focus:outline-none cursor-pointer"
+          >
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <ul class="container mx-auto px-4 py-2">
+          <li>
+            <a href="index.html" class="block py-2 font-medium text-chefblue"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="history.html"
+              class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark"
+              >History</a
+            >
+          </li>
+          <li>
+            <a
+              href="culture.html"
+              class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark"
+              >Culture</a
+            >
+          </li>
+          <li>
+            <a
+              href="gallery.html"
+              class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="tours.html"
+              class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark"
+              >Tours</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <select
+              id="mobile-language-selector"
+              class="w-full py-2 bg-transparent text-gray-600 focus:outline-none border-t border-gray-200 mt-2"
+            >
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="es">Español</option>
+              <option value="ar">العربية</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section with Video Background -->
+      <section class="relative h-[90vh] overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <!-- Fallback Image if Video Doesn't Load -->
+          <img
+            src="img/chefchaouen-background.jpg"
+            alt="Chefchaouen Streets"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div
+          class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10"
+        >
+          <h1
+            class="text-4xl md:text-6xl font-serif font-bold mb-4 text-white"
+            data-aos="fade-down"
+            data-aos-delay="300"
+          >
+            Chefchaouen
+          </h1>
+          <p
+            class="text-xl md:text-2xl mb-8 text-white"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            The Blue Pearl of Morocco
+          </p>
+          <div data-aos="fade-up" data-aos-delay="700">
+            <a
+              href="tours.html"
+              class="bg-white text-chefblue-dark hover:bg-sand hover:text-chefblue-dark px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center mr-4"
+            >
+              <i class="fas fa-map-marked-alt mr-2"></i> Book a Tour
+            </a>
+            <a
+              href="#virtual-tour"
+              class="border-2 border-white text-white hover:bg-white hover:text-chefblue-dark px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center"
+            >
+              <i class="fas fa-vr-cardboard mr-2"></i> Virtual Tour
+            </a>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div
+            class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+          >
+            <a href="#intro" class="text-white">
+              <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-sand-light to-transparent"
+        ></div>
+      </section>
+
+      <!-- Introduction Section -->
+      <section id="intro" class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center justify-center mb-6">
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+            <h2
+              class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+            >
+              Welcome to the Blue City
+            </h2>
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div data-aos="fade-right">
+              <p class="text-lg mb-4">
+                Nestled in the Rif Mountains of northwest Morocco, Chefchaouen
+                is a magical blue-washed town that feels like stepping into
+                another world.
+              </p>
+              <p class="text-lg mb-4">
+                Known for its striking blue buildings, winding medina streets,
+                and breathtaking mountain views, Chefchaouen offers visitors a
+                unique blend of Moroccan and Andalusian culture.
+              </p>
+              <p class="text-lg">
+                Discover the charm of this peaceful mountain town, from its rich
+                history and vibrant culture to its stunning natural surroundings
+                and warm hospitality.
+              </p>
+
+              <!-- Quick Facts -->
+              <div class="mt-6 p-4 bg-chefblue-light/10 rounded-lg">
+                <h3 class="font-bold text-chefblue-dark mb-2">Quick Facts:</h3>
+                <ul class="grid grid-cols-2 gap-2">
+                  <li class="flex items-center">
+                    <i class="fas fa-map-pin text-chefblue-dark mr-2"></i>
+                    Northwest Morocco
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-mountain text-chefblue-dark mr-2"></i> Rif
+                    Mountains
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-users text-chefblue-dark mr-2"></i> ~42,000
+                    inhabitants
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-calendar-alt text-chefblue-dark mr-2"></i>
+                    Founded in 1471
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div data-aos="fade-left" class="relative">
+              <img
+                src="./img/image3.jpg"
+                alt="Chefchaouen blue streets"
+                class="w-full h-auto rounded-lg shadow-xl"
+              />
+              <!-- Floating Image -->
+              <img
+                src="./img/chefchaouen.jpg"
+                alt="Blue doorway"
+                class="absolute -bottom-4 -left-4 w-32 h-32 object-cover rounded-lg shadow-lg border-4 border-white"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section with Hover Effects -->
+      <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-center mb-12">
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+            <h2
+              class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+            >
+              Discover Chefchaouen
+            </h2>
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- History Card -->
+            <div
+              class="bg-sand-light rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="relative overflow-hidden h-48">
+                <img
+                  src="./img/image4.jpg"
+                  alt="Historic Kasbah"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    Discover Our Rich History
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-chefblue-dark mb-2">
+                  Rich History
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  Founded in 1471, Chefchaouen has a fascinating history
+                  influenced by Moorish exiles from Spain, Jewish refugees, and
+                  Spanish occupation.
+                </p>
+                <a
+                  href="history.html"
+                  class="text-chefblue-dark hover:text-chefblue font-medium inline-flex items-center group"
+                >
+                  <span>Learn more</span>
+                  <i
+                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Culture Card -->
+            <div
+              class="bg-sand-light rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="relative overflow-hidden h-48">
+                <img
+                  src="./img/artisanat.jpg"
+                  alt="Local artisans"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    Experience Our Vibrant Culture
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-chefblue-dark mb-2">
+                  Vibrant Culture
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  Experience the unique blend of Berber, Arabic and Andalusian
+                  influences in the city's cuisine, crafts, music, and
+                  traditions.
+                </p>
+                <a
+                  href="culture.html"
+                  class="text-chefblue-dark hover:text-chefblue font-medium inline-flex items-center group"
+                >
+                  <span>Learn more</span>
+                  <i
+                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tours Card -->
+            <div
+              class="bg-sand-light rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="relative overflow-hidden h-48">
+                <img
+                  src="./img/montagne-chefchaouen.jpg"
+                  alt="Mountain view"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    Explore with Our Local Guides
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-chefblue-dark mb-2">
+                  Guided Tours
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  Explore the medina, hike in the surrounding mountains, or
+                  experience local workshops with our knowledgeable local
+                  guides.
+                </p>
+                <a
+                  href="tours.html"
+                  class="text-chefblue-dark hover:text-chefblue font-medium inline-flex items-center group"
+                >
+                  <span>Book a tour</span>
+                  <i
+                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Virtual Tour Section -->
+      <section
+        id="virtual-tour"
+        class="container mx-auto px-4 py-16 relative overflow-hidden"
+      >
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center justify-center mb-8">
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+            <h2
+              class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+            >
+              Virtual Tour
+            </h2>
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+          </div>
+          <p class="text-center text-lg mb-8 max-w-2xl mx-auto">
+            Experience the magic of Chefchaouen from the comfort of your home
+            with our interactive 360° tour of the city's most beautiful
+            locations.
+          </p>
+
+          <div
+            class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl"
+            data-aos="fade-up"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1684123456789!6m8!1m7!1sCAoSLEFGMVFpcE81N0VkZzBSTzBfSVg3MFFFRl9DcWJLM1d1Qm5JdnpXNENuT0FO!2m2!1d35.1688375!2d-5.2636621!3f190!4f0!5f0.7820865974627469"
+              width="100%"
+              height="500"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg"
+            ></iframe>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button
+              class="virtual-location p-4 rounded-lg bg-chefblue-light/20 hover:bg-chefblue-light/40 transition duration-300 text-center"
+            >
+              <i class="fas fa-street-view text-chefblue-dark text-xl mb-2"></i>
+              <span class="block text-chefblue-dark font-medium"
+                >Blue Streets</span
+              >
+            </button>
+            <button
+              class="virtual-location p-4 rounded-lg bg-chefblue-light/20 hover:bg-chefblue-light/40 transition duration-300 text-center"
+            >
+              <i class="fas fa-monument text-chefblue-dark text-xl mb-2"></i>
+              <span class="block text-chefblue-dark font-medium"
+                >Kasbah Museum</span
+              >
+            </button>
+            <button
+              class="virtual-location p-4 rounded-lg bg-chefblue-light/20 hover:bg-chefblue-light/40 transition duration-300 text-center"
+            >
+              <i class="fas fa-gopuram text-chefblue-dark text-xl mb-2"></i>
+              <span class="block text-chefblue-dark font-medium"
+                >Spanish Mosque</span
+              >
+            </button>
+            <button
+              class="virtual-location p-4 rounded-lg bg-chefblue-light/20 hover:bg-chefblue-light/40 transition duration-300 text-center"
+            >
+              <i class="fas fa-mountain text-chefblue-dark text-xl mb-2"></i>
+              <span class="block text-chefblue-dark font-medium"
+                >Mountain View</span
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- Decorative Element -->
+        <div
+          class="absolute -right-16 -bottom-16 w-64 h-64 bg-chefblue-light/10 rounded-full z-0"
+        ></div>
+        <div
+          class="absolute -left-16 -top-16 w-64 h-64 bg-chefblue-light/10 rounded-full z-0"
+        ></div>
+      </section>
+
+      <!-- Testimonial Section with Slider -->
+      <section class="bg-chefblue-dark text-white py-16 relative">
+        <div
+          class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-sand-light to-transparent"
+        ></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+          <div class="flex items-center justify-center mb-8">
+            <div class="h-0.5 bg-white w-12"></div>
+            <h2 class="text-3xl font-serif font-bold mx-4">
+              What Visitors Say
+            </h2>
+            <div class="h-0.5 bg-white w-12"></div>
+          </div>
+
+          <div class="testimonials-slider max-w-4xl mx-auto relative">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg testimonial active">
+              <div class="text-5xl text-chefblue-light mb-4">"</div>
+              <p class="text-xl italic mb-6 text-gray-700">
+                Chefchaouen was the highlight of our Morocco trip. The blue
+                streets are even more magical in person, and the locals were
+                incredibly welcoming. Don't miss the sunset view from the
+                Spanish Mosque!
+              </p>
+              <div class="font-medium">
+                <p class="text-chefblue-dark">Sarah Johnson</p>
+                <p class="text-gray-500 text-sm">Visited April 2023</p>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg testimonial hidden">
+              <div class="text-5xl text-chefblue-light mb-4">"</div>
+              <p class="text-xl italic mb-6 text-gray-700">
+                The cuisine in Chefchaouen is incredible. We took a cooking
+                class and learned to make traditional tagine. The mountain
+                hiking was spectacular, with waterfalls and lush valleys to
+                explore.
+              </p>
+              <div class="font-medium">
+                <p class="text-chefblue-dark">David Williams</p>
+                <p class="text-gray-500 text-sm">Visited June 2023</p>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg testimonial hidden">
+              <div class="text-5xl text-chefblue-light mb-4">"</div>
+              <p class="text-xl italic mb-6 text-gray-700">
+                As a photographer, Chefchaouen is a dream destination. Every
+                corner offers a perfect photo opportunity. The locals are
+                friendly and proud to share their beautiful blue city with
+                visitors.
+              </p>
+              <div class="font-medium">
+                <p class="text-chefblue-dark">Mei Lin</p>
+                <p class="text-gray-500 text-sm">Visited March 2023</p>
+              </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="flex justify-center mt-6 space-x-2">
+              <button
+                class="testimonial-dot active w-3 h-3 rounded-full bg-white/50 hover:bg-white transition"
+                data-index="0"
+              ></button>
+              <button
+                class="testimonial-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition"
+                data-index="1"
+              ></button>
+              <button
+                class="testimonial-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition"
+                data-index="2"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-sand-light to-transparent"
+        ></div>
+      </section>
+
+      <!-- Instagram Feed Section -->
+      <section class="container mx-auto px-4 py-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="h-0.5 bg-chefblue-light w-12"></div>
+          <h2
+            class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+          >
+            Follow Our Journey
+          </h2>
+          <div class="h-0.5 bg-chefblue-light w-12"></div>
+        </div>
+        <p class="text-center text-lg mb-8 max-w-2xl mx-auto">
+          Share your Chefchaouen experiences with us using
+          <span class="font-bold text-chefblue-dark">#BlueChefchaouen</span> or
+          follow our Instagram for daily inspiration.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2" data-aos="fade-up">
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square"
+          >
+            <img
+              src="./img/gallery/Blue alleyway in Chefchaouen.jpg"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 245
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square"
+          >
+            <img
+              src="./img/gallery/Blue doorway in Chefchaouen.png"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 187
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square"
+          >
+            <img
+              src="./img/gallery/grand-mosque-chefchaouen.jpg"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 312
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square"
+          >
+            <img
+              src="./img/gallery/Aerial view of Chefchaouen.jpg"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 429
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square md:hidden lg:block"
+          >
+            <img
+              src="./img/gallery/Sunset over Chefchaouen.jpg"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 275
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square md:hidden lg:block"
+          >
+            <img
+              src="./img/gallery/Spice market in Chefchaouen.png"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 197
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square md:hidden lg:block"
+          >
+            <img
+              src="./img/gallery/Traditional Moroccan tea service.png"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 347
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="block overflow-hidden relative group aspect-square md:hidden lg:block"
+          >
+            <img
+              src="./img/gallery/Local artisan in Chefchaouen.png"
+              alt="Instagram post"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-chefblue-dark/0 group-hover:bg-chefblue-dark/70 transition duration-300 flex items-center justify-center"
+            >
+              <div
+                class="text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center"
+              >
+                <i class="fas fa-heart mr-2"></i> 215
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="https://www.instagram.com/chefchaouenguide"
+            target="_blank"
+            class="inline-flex items-center text-chefblue-dark hover:text-chefblue font-medium transition duration-300"
+          >
+            <i class="fab fa-instagram text-xl mr-2"></i> Follow us
+            @chefchaouenguide
+          </a>
+        </div>
+      </section>
+
+      <!-- Interactive Morocco Map -->
+      <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-center mb-8">
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+            <h2
+              class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+            >
+              Where to Find Us
+            </h2>
+            <div class="h-0.5 bg-chefblue-light w-12"></div>
+          </div>
+          <p class="text-center text-lg mb-8 max-w-2xl mx-auto">
+            Located in northern Morocco, Chefchaouen is nestled in the Rif
+            Mountains, about 110 km from Tangier and 250 km from Fes.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="relative" data-aos="fade-right">
+              <img
+                src="./img/Map of Morocco.jpg"
+                alt="Map of Morocco"
+                class="w-full h-auto rounded-lg shadow-md"
+              />
+              <!-- Markers -->
+              <div
+                class="absolute top-[1%] left-[69%] w-3 h-3 bg-white border-2 border-chefblue-dark rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+                data-city="Tangier"
+              ></div>
+              <div
+                class="absolute top-[5%] left-[72%] w-3 h-3 bg-red-600 border-2 border-red-950 rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+              ></div>
+              <div
+                class="absolute top-[18%] left-[70%] w-3 h-3 bg-white border-2 border-chefblue-dark rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+                data-city="Fes"
+              ></div>
+              <div
+                class="absolute top-[12%] left-[62%] w-3 h-3 bg-white border-2 border-chefblue-dark rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+                data-city="Rabat"
+              ></div>
+              <div
+                class="absolute top-[15%] left-[58%] w-3 h-3 bg-white border-2 border-chefblue-dark rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+                data-city="Casablanca"
+              ></div>
+              <div
+                class="absolute top-[28%] left-[56%] w-3 h-3 bg-white border-2 border-chefblue-dark rounded-full hover:scale-150 transition-transform duration-300 cursor-pointer"
+                data-city="Marrakech"
+              ></div>
+            </div>
+
+            <div data-aos="fade-left">
+              <div class="bg-sand-light p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-chefblue-dark mb-4">
+                  How to Reach Chefchaouen
+                </h3>
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-medium flex items-center">
+                      <i class="fas fa-plane mr-2 text-chefblue-dark"></i> By
+                      Air
+                    </h4>
+                    <p class="text-gray-700 ml-6">
+                      Fly to Tangier Ibn Battouta Airport (TNG) or Fes–Saïss
+                      Airport (Fes), then take a bus or grand taxi to
+                      Chefchaouen.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-medium flex items-center">
+                      <i class="fas fa-bus mr-2 text-chefblue-dark"></i> By Bus
+                    </h4>
+                    <p class="text-gray-700 ml-6">
+                      CTM and Supratours operate regular buses from major
+                      Moroccan cities to Chefchaouen.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-medium flex items-center">
+                      <i class="fas fa-car mr-2 text-chefblue-dark"></i> By Car
+                    </h4>
+                    <p class="text-gray-700 ml-6">
+                      Chefchaouen is accessible via well-maintained roads from
+                      Tangier (2 hours), Tetouan (1 hour), and Fes (4 hours).
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="font-medium flex items-center">
+                      <i class="fas fa-taxi mr-2 text-chefblue-dark"></i> By
+                      Grand Taxi
+                    </h4>
+                    <p class="text-gray-700 ml-6">
+                      Shared grand taxis connect Chefchaouen with nearby cities
+                      like Tetouan and Tangier.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- City Info (Hidden by Default, Shown on Map Click) -->
+                <div id="city-info" class="mt-6 hidden">
+                  <div
+                    class="p-4 bg-white rounded-lg border border-chefblue-light"
+                  >
+                    <h4
+                      id="city-name"
+                      class="font-bold text-chefblue-dark"
+                    ></h4>
+                    <p id="city-distance" class="text-sm text-gray-600"></p>
+                    <p id="city-description" class="mt-2 text-gray-700"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="container mx-auto px-4 py-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="h-0.5 bg-chefblue-light w-12"></div>
+          <h2
+            class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center"
+          >
+            Frequently Asked Questions
+          </h2>
+          <div class="h-0.5 bg-chefblue-light w-12"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button
+              class="faq-toggle w-full p-4 flex justify-between items-center focus:outline-none"
+            >
+              <h3 class="font-bold text-chefblue-dark text-left">
+                Why is Chefchaouen blue?
+              </h3>
+              <i
+                class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-content max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="p-4 pt-0 text-gray-700">
+                <p>
+                  There are several theories about why Chefchaouen's buildings
+                  are painted blue:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>
+                    The blue color was introduced by Jewish refugees in the
+                    1930s, who considered blue to symbolize the sky and heaven.
+                  </li>
+                  <li>The blue acts as a natural mosquito repellent.</li>
+                  <li>
+                    The color creates a cooling psychological effect in the hot
+                    climate.
+                  </li>
+                  <li>
+                    Blue represents water, which is precious in the mountainous
+                    region.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button
+              class="faq-toggle w-full p-4 flex justify-between items-center focus:outline-none"
+            >
+              <h3 class="font-bold text-chefblue-dark text-left">
+                When is the best time to visit Chefchaouen?
+              </h3>
+              <i
+                class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-content max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="p-4 pt-0 text-gray-700">
+                <p>
+                  The best time to visit Chefchaouen is during spring (March to
+                  May) and autumn (September to November) when temperatures are
+                  mild and comfortable for exploring. Summer (June to August)
+                  can be hot but still manageable, while winter (December to
+                  February) is cooler with occasional rainfall, but you'll enjoy
+                  fewer tourists.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button
+              class="faq-toggle w-full p-4 flex justify-between items-center focus:outline-none"
+            >
+              <h3 class="font-bold text-chefblue-dark text-left">
+                How many days should I spend in Chefchaouen?
+              </h3>
+              <i
+                class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-content max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="p-4 pt-0 text-gray-700">
+                <p>
+                  We recommend spending at least 2-3 days in Chefchaouen to
+                  fully experience the city. This gives you:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>One day to explore the medina and its blue streets</li>
+                  <li>
+                    One day for a mountain hike or visit to nearby attractions
+                    like Akchour waterfall
+                  </li>
+                  <li>
+                    One day to relax, shop, and immerse yourself in the local
+                    culture
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button
+              class="faq-toggle w-full p-4 flex justify-between items-center focus:outline-none"
+            >
+              <h3 class="font-bold text-chefblue-dark text-left">
+                Is Chefchaouen safe for tourists?
+              </h3>
+              <i
+                class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-content max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="p-4 pt-0 text-gray-700">
+                <p>
+                  Yes, Chefchaouen is considered one of the safest cities in
+                  Morocco for tourists. The local population is friendly and
+                  welcoming to visitors. As with any travel destination, normal
+                  precautions should be taken regarding personal belongings and
+                  awareness of your surroundings, especially at night.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <button
+              class="faq-toggle w-full p-4 flex justify-between items-center focus:outline-none"
+            >
+              <h3 class="font-bold text-chefblue-dark text-left">
+                What should I wear when visiting Chefchaouen?
+              </h3>
+              <i
+                class="fas fa-chevron-down text-chefblue-dark transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-content max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="p-4 pt-0 text-gray-700">
+                <p>
+                  While Chefchaouen is relatively relaxed compared to other
+                  Moroccan cities, it's still respectful to dress modestly:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>
+                    For women: Clothing that covers shoulders and knees is
+                    recommended. Loose pants, long skirts, and tops that aren't
+                    too revealing are appropriate.
+                  </li>
+                  <li>
+                    For men: Shorts that reach the knee and t-shirts are
+                    acceptable.
+                  </li>
+                  <li>
+                    Comfortable walking shoes are essential as the medina
+                    involves lots of walking on uneven surfaces and stairs.
+                  </li>
+                  <li>
+                    In summer, light fabrics are best, while layers are
+                    recommended for cooler evenings and winter months.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section
+        class="bg-chefblue-dark text-white py-16 relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-chefblue/30 rounded-full -mr-32 -mt-32"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-chefblue/30 rounded-full -ml-32 -mb-32"
+        ></div>
+
+        <div class="container mx-auto px-4 text-center relative z-10">
+          <h2 class="text-3xl font-serif font-bold mb-6" data-aos="fade-down">
+            Ready to Experience Chefchaouen?
+          </h2>
+          <p
+            class="text-xl max-w-2xl mx-auto mb-8"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Book a guided tour and discover the magic of the Blue Pearl with
+            local experts who know every corner of this enchanting city.
+          </p>
+          <div data-aos="zoom-in" data-aos-delay="400">
+            <a
+              href="tours.html"
+              class="bg-white text-chefblue-dark hover:bg-sand hover:text-chefblue-dark px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center mr-4"
+            >
+              <i class="fas fa-map-marked-alt mr-2"></i> Explore Tours
+            </a>
+            <a
+              href="contact.html"
+              class="border-2 border-white text-white hover:bg-white hover:text-chefblue-dark px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center"
+            >
+              <i class="fas fa-envelope mr-2"></i> Contact Us
+            </a>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="mt-12 max-w-xl mx-auto">
+            <h3 class="text-xl font-medium mb-4">
+              Get Chefchaouen Updates & Travel Tips
+            </h3>
+            <form class="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-sand-dark text-chefblue-dark hover:bg-sand transition duration-300 px-6 py-3 rounded-lg font-medium"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-sm mt-2 text-white/80">
+              We respect your privacy and will never share your information.
+              Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+              <span class="text-2xl mr-2">💧</span> Chefchaouen
+            </h3>
+            <p class="text-gray-300">
+              Discover the magic of Morocco's blue city nestled in the Rif
+              Mountains.
+            </p>
+            <div class="mt-4 flex space-x-2">
+              <a
+                href="#"
+                class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="history.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> History</a
+                >
+              </li>
+              <li>
+                <a
+                  href="culture.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> Culture</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gallery.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tours.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> Tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-300 hover:text-white transition duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-4">Contact</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start">
+                <i class="fas fa-envelope mt-1 mr-2 text-chefblue-light"></i>
+                <span>info@chefchaouenguide.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone mt-1 mr-2 text-chefblue-light"></i>
+                <span>+212 539 986 XXX</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-map-marker-alt mt-1 mr-2 text-chefblue-light"
+                ></i>
+                <span>Medina, Chefchaouen, Morocco</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-clock mt-1 mr-2 text-chefblue-light"></i>
+                <span>Open daily: 9:00 AM - 6:00 PM</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-medium mb-4">Travel Resources</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-300"
+                  >Morocco Travel Tips</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-300"
+                  >Weather in Chefchaouen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-300"
+                  >Transportation Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-300"
+                  >Accommodation Options</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-300"
+                  >Travel Insurance</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-center md:text-left">
+            &copy; 2023 Chefchaouen Guide. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0">
+            <ul class="flex space-x-6">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 text-sm"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 text-sm"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300 text-sm"
+                  >Sitemap</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 bg-chefblue-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Cookie Consent Dialog -->
+    <div
+      id="cookie-consent"
+      class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center z-50 transform translate-y-full transition-transform duration-500"
+    >
+      <div>
+        <p class="text-gray-800">
+          We use cookies to improve your experience on our site. By continuing
+          to browse, you agree to our
+          <a href="#" class="text-chefblue-dark underline">cookie policy</a>.
+        </p>
+      </div>
+      <div class="mt-4 md:mt-0 flex space-x-2">
+        <button
+          id="cookie-accept"
+          class="bg-chefblue-dark text-white px-4 py-2 rounded-lg"
+        >
+          Accept
+        </button>
+        <button
+          id="cookie-decline"
+          class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg"
+        >
+          Decline
+        </button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS animation library
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // FAQ toggles
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector("i");
+
+            if (content.style.maxHeight) {
+              // Close accordion
+              content.style.maxHeight = null;
+              icon.classList.remove("rotate-180");
+            } else {
+              // Open accordion
+              content.style.maxHeight = content.scrollHeight + "px";
+              icon.classList.add("rotate-180");
+            }
+          });
+        });
+
+        // Testimonial slider
+        const testimonials = document.querySelectorAll(".testimonial");
+        const dots = document.querySelectorAll(".testimonial-dot");
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+          testimonials.forEach((testimonial) =>
+            testimonial.classList.add("hidden")
+          );
+          dots.forEach((dot) => dot.classList.remove("active", "bg-white"));
+          dots.forEach((dot) => dot.classList.add("bg-white/50"));
+
+          testimonials[index].classList.remove("hidden");
+          testimonials[index].classList.add("active");
+          dots[index].classList.add("active", "bg-white");
+          dots[index].classList.remove("bg-white/50");
+
+          currentIndex = index;
+        }
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => showTestimonial(index));
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+          let nextIndex = (currentIndex + 1) % testimonials.length;
+          showTestimonial(nextIndex);
+        }, 5000);
+
+        // Morocco map city info
+        const cityMarkers = document.querySelectorAll("[data-city]");
+        const cityInfo = document.getElementById("city-info");
+        const cityName = document.getElementById("city-name");
+        const cityDistance = document.getElementById("city-distance");
+        const cityDescription = document.getElementById("city-description");
+
+        const cityData = {
+          Tangier: {
+            distance: "110 km (2 hours by car)",
+            description:
+              "A major port city where the Mediterranean meets the Atlantic. Ferries connect to Spain, making it a common entry point to Morocco.",
+          },
+          Fes: {
+            distance: "250 km (4 hours by car)",
+            description:
+              "One of Morocco's imperial cities with the largest car-free urban area in the world, known for its ancient walled medina and tanneries.",
+          },
+          Rabat: {
+            distance: "320 km (4.5 hours by car)",
+            description:
+              "Morocco's capital city, featuring beautiful beaches, historic Kasbah des Oudaias, and the Hassan Tower.",
+          },
+          Casablanca: {
+            distance: "370 km (5 hours by car)",
+            description:
+              "Morocco's largest city and economic center, home to the magnificent Hassan II Mosque and a vibrant cosmopolitan culture.",
+          },
+          Marrakech: {
+            distance: "550 km (7 hours by car)",
+            description:
+              "Famous for its bustling Jemaa el-Fnaa square, historic palaces, and vibrant souks. A must-visit cultural hub of Morocco.",
+          },
+        };
+
+        cityMarkers.forEach((marker) => {
+          marker.addEventListener("click", function () {
+            const city = this.getAttribute("data-city");
+            cityName.textContent = city;
+            cityDistance.textContent = `Distance from Chefchaouen: ${cityData[city].distance}`;
+            cityDescription.textContent = cityData[city].description;
+            cityInfo.classList.remove("hidden");
+          });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+          } else {
+            backToTopButton.classList.add("opacity-0", "invisible");
+            backToTopButton.classList.remove("opacity-100", "visible");
+          }
+        });
+
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // Cookie consent
+        const cookieConsent = document.getElementById("cookie-consent");
+        const cookieAccept = document.getElementById("cookie-accept");
+        const cookieDecline = document.getElementById("cookie-decline");
+
+        // Show cookie consent if not previously accepted
+        if (!localStorage.getItem("cookieConsent")) {
+          setTimeout(() => {
+            cookieConsent.classList.remove("translate-y-full");
+          }, 1000);
+        }
+
+        cookieAccept.addEventListener("click", () => {
+          localStorage.setItem("cookieConsent", "accepted");
+          cookieConsent.classList.add("translate-y-full");
+        });
+
+        cookieDecline.addEventListener("click", () => {
+          localStorage.setItem("cookieConsent", "declined");
+          cookieConsent.classList.add("translate-y-full");
+        });
+
+        // Virtual tour locations
+        const virtualLocations = document.querySelectorAll(".virtual-location");
+        const virtualFrame = document.querySelector("iframe");
+
+        const locationUrls = {
+          0: "https://www.google.com/maps/embed?pb=!4v1684123456789!6m8!1m7!1sCAoSLEFGMVFpcE81N0VkZzBSTzBfSVg3MFFFRl9DcWJLM1d1Qm5JdnpXNENuT0FO!2m2!1d35.1688375!2d-5.2636621!3f190!4f0!5f0.7820865974627469",
+          1: "https://www.google.com/maps/embed?pb=!4v1684123456790!6m8!1m7!1sCAoSLEFGMVFpcFAzU3RpZFkyZkV5N2ZJbVpabVRBOWlpTEdXNlBmQzE4LU9mdGhH!2m2!1d35.1686247!2d-5.2638626!3f180!4f0!5f0.7820865974627469",
+          2: "https://www.google.com/maps/embed?pb=!4v1746112703436!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJREdpTVgxU2c.!2m2!1d35.16558452557307!2d-5.255719277679386!3f80.86755849966195!4f7.643840385107268!5f0.7820865974627469",
+          3: "https://www.google.com/maps/embed?pb=!4v1746112861812!6m8!1m7!1sCAoSLEFGMVFpcE9VZEJrSG1uZS1zdEhBVkl3a2pLemxBNHozbGhsWnBObWh4Vi1P!2m2!1d35.16573031906281!2d-5.255387834704754!3f332.86089163479295!4f-7.983697371243082!5f0.7820865974627469",
+        };
+
+        virtualLocations.forEach((location, index) => {
+          location.addEventListener("click", () => {
+            virtualFrame.src = locationUrls[index];
+
+            // Highlight the active location
+            virtualLocations.forEach((loc) => {
+              loc.classList.remove("bg-chefblue-light/40");
+              loc.classList.add("bg-chefblue-light/20");
+            });
+
+            location.classList.remove("bg-chefblue-light/20");
+            location.classList.add("bg-chefblue-light/40");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

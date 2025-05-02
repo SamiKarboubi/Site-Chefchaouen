@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Chefchaouen: The Blue Pearl of Morocco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chefblue: {
+                            light: '#8FB5D9',
+                            DEFAULT: '#4A7DAB',
+                            dark: '#2C5282',
+                        },
+                        sand: {
+                            light: '#F5EFE0',
+                            DEFAULT: '#E6D9B8',
+                            dark: '#C4B28C',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-sand-light">
+    <!-- Top Info Bar -->
+    <div class="bg-chefblue-dark text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center text-sm">
+            <div class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Chefchaouen, Morocco</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="mailto:info@chefchaouenguide.com" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-envelope mr-1"></i> info@chefchaouenguide.com
+                </a>
+                <a href="tel:+212539986XXX" class="hover:text-sand-light transition duration-300">
+                    <i class="fas fa-phone mr-1"></i> +212 539 986 XXX
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold text-chefblue-dark flex items-center">
+                <span class="text-3xl mr-2">💧</span> Chefchaouen
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="index.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Home</a></li>
+                <li><a href="history.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">History</a></li>
+                <li><a href="culture.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Culture</a></li>
+                <li><a href="gallery.html" class="font-medium text-chefblue hover:text-chefblue-dark border-b-2 border-chefblue transition duration-300">Gallery</a></li>
+                <li><a href="tours.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Tours</a></li>
+                <li><a href="contact.html" class="font-medium text-gray-600 hover:text-chefblue-dark hover:border-b-2 hover:border-chefblue transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Language Selector -->
+            <div class="hidden md:flex items-center ml-6">
+                <select id="language-selector" class="bg-transparent border-none text-gray-600 focus:outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="container mx-auto px-4 py-2">
+                <li><a href="index.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Home</a></li>
+                <li><a href="history.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">History</a></li>
+                <li><a href="culture.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Culture</a></li>
+                <li><a href="gallery.html" class="block py-2 font-medium text-chefblue">Gallery</a></li>
+                <li><a href="tours.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Tours</a></li>
+                <li><a href="contact.html" class="block py-2 font-medium text-gray-600 hover:text-chefblue-dark">Contact</a></li>
+                <li>
+                    <select id="mobile-language-selector" class="w-full py-2 bg-transparent text-gray-600 focus:outline-none border-t border-gray-200 mt-2">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header with Parallax -->
+        <section class="relative flex items-center justify-center h-[50vh] overflow-hidden bg-chefblue-dark" data-aos="fade">
+            <div class="absolute inset-0 z-0">
+                <img src="./img/gallery/Aerial view of Chefchaouen.jpg" alt="Panoramic view of Chefchaouen" 
+                     class="w-full h-full object-cover opacity-40 scale-110" id="parallax-bg">
+            </div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-white" data-aos="fade-down">Gallery</h1>
+                <p class="text-xl max-w-3xl mx-auto text-white" data-aos="fade-up" data-aos-delay="300">Explore the stunning beauty of Chefchaouen through our collection of images</p>
+                
+                <!-- Quick Jump Links -->
+                <div class="mt-8 flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#streets" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-road mr-2"></i> Blue Streets
+                    </a>
+                    <a href="#architecture" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-building mr-2"></i> Architecture
+                    </a>
+                    <a href="#landscapes" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-mountain mr-2"></i> Landscapes
+                    </a>
+                    <a href="#culture" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full transition duration-300 backdrop-blur-sm flex items-center">
+                        <i class="fas fa-users mr-2"></i> Culture & People
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-sand-light to-transparent"></div>
+        </section>
+
+        <!-- Gallery Filter -->
+        <section class="container mx-auto px-4 py-8 top-16 z-40 bg-sand-light">
+            <div class="flex flex-wrap justify-center gap-3 mb-4">
+                <button class="filter-btn active px-4 py-2 rounded-lg bg-chefblue text-white hover:bg-chefblue-dark transition duration-300" data-filter="all">
+                    <i class="fas fa-border-all mr-2"></i>All
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-chefblue hover:text-white transition duration-300" data-filter="streets">
+                    <i class="fas fa-road mr-2"></i>Blue Streets
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-chefblue hover:text-white transition duration-300" data-filter="architecture">
+                    <i class="fas fa-building mr-2"></i>Architecture
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-chefblue hover:text-white transition duration-300" data-filter="landscapes">
+                    <i class="fas fa-mountain mr-2"></i>Landscapes
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-chefblue hover:text-white transition duration-300" data-filter="culture">
+                    <i class="fas fa-users mr-2"></i>Culture & People
+                </button>
+            </div>
+            
+            <!-- View Mode Toggle -->
+            <div class="flex justify-center mt-2">
+                <div class="bg-white rounded-full p-1 inline-flex shadow-sm">
+                    <button id="grid-view" class="view-toggle active px-3 py-1 rounded-full text-chefblue-dark">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button id="masonry-view" class="view-toggle px-3 py-1 rounded-full text-gray-500">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Sections -->
+        <div id="gallery-container" class="container mx-auto px-4 py-8 grid-view">
+            <!-- LightGallery Container -->
+            <div id="lightgallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Blue Streets Images Section -->
+                <div id="streets" class="col-span-full mt-8 mb-2">
+                    <div class="flex items-center mb-4">
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                        <h2 class="text-2xl font-serif font-bold text-chefblue-dark mx-4" data-aos="fade-right">Blue Streets</h2>
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item streets" data-aos="fade-up">
+                    <a href="./img/gallery/Blue alleyway in Chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block" 
+                       data-sub-html="<h3>Blue Alleyway</h3><p>Narrow streets painted in various shades of blue</p>">
+                        <img src="./img/gallery/Blue alleyway in Chefchaouen.jpg" alt="Blue alleyway in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Blue Alleyway</h3>
+                                <p class="text-sm">Narrow streets painted in various shades of blue</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item streets" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./img/gallery/Blue doorway in Chefchaouen.png" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Ornate Doorway</h3><p>Traditional Moroccan door framed by blue walls</p>">
+                        <img src="./img/gallery/Blue doorway in Chefchaouen.png" alt="Blue doorway in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Ornate Doorway</h3>
+                                <p class="text-sm">Traditional Moroccan door framed by blue walls</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item streets" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./img/gallery/Blue stairway in Chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Blue Stairway</h3><p>Winding steps leading through the blue medina</p>">
+                        <img src="./img/gallery/Blue stairway in Chefchaouen.jpg" alt="Blue stairway in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Blue Stairway</h3>
+                                <p class="text-sm">Winding steps leading through the blue medina</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item streets" data-aos="fade-up" data-aos-delay="300">
+                    <a href="./img/gallery/Blue painted street.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Blue Alley Passageway</h3><p>Covered passageway with intensely blue walls</p>">
+                        <img src="./img/gallery/Blue painted street.jpg" alt="Blue painted street" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Blue Alley Passageway</h3>
+                                <p class="text-sm">Covered passageway with intensely blue walls</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Architecture Images Section -->
+                <div id="architecture" class="col-span-full mt-12 mb-2">
+                    <div class="flex items-center mb-4">
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                        <h2 class="text-2xl font-serif font-bold text-chefblue-dark mx-4" data-aos="fade-right">Architecture</h2>
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item architecture" data-aos="fade-up">
+                    <a href="./img/image4.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Kasbah Museum</h3><p>15th century fortress in the heart of the medina</p>">
+                        <img src="./img/image4.jpg" alt="Kasbah in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Kasbah Museum</h3>
+                                <p class="text-sm">15th century fortress in the heart of the medina</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item architecture" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./img/gallery/grand-mosque-chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Grand Mosque</h3><p>The octagonal minaret of the main mosque</p>">
+                        <img src="./img/gallery/grand-mosque-chefchaouen.jpg" alt="Grand Mosque in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Grand Mosque</h3>
+                                <p class="text-sm">The octagonal minaret of the main mosque</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item architecture" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./img/Spanish Mosque.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Spanish Mosque</h3><p>Built during the Spanish occupation on a hillside</p>">
+                        <img src="./img/Spanish Mosque.jpg" alt="Spanish Mosque in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Spanish Mosque</h3>
+                                <p class="text-sm">Built during the Spanish occupation on a hillside</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item architecture" data-aos="fade-up" data-aos-delay="300">
+                    <a href="./img/KASBAH2.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Kasbah Interior</h3><p>The detailed interior architecture of the Kasbah fortress</p>">
+                        <img src="./img/KASBAH2.jpg" alt="Kasbah Interior" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Kasbah Interior</h3>
+                                <p class="text-sm">The detailed interior architecture of the Kasbah fortress</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Landscape Images Section -->
+                <div id="landscapes" class="col-span-full mt-12 mb-2">
+                    <div class="flex items-center mb-4">
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                        <h2 class="text-2xl font-serif font-bold text-chefblue-dark mx-4" data-aos="fade-right">Landscapes</h2>
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item landscapes" data-aos="fade-up">
+                    <a href="./img/gallery/Rif Mountains view from Chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Rif Mountains</h3><p>Majestic mountain range surrounding the blue city</p>">
+                        <img src="./img/gallery/Rif Mountains view from Chefchaouen.jpg" alt="Rif Mountains view from Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Rif Mountains</h3>
+                                <p class="text-sm">Majestic mountain range surrounding the blue city</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item landscapes" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./img/gallery/Aerial view of Chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Blue City Panorama</h3><p>Aerial view of Chefchaouen nestled in the mountains</p>">
+                        <img src="./img/gallery/Aerial view of Chefchaouen.jpg" alt="Aerial view of Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Blue City Panorama</h3>
+                                <p class="text-sm">Aerial view of Chefchaouen nestled in the mountains</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item landscapes" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./img/gallery/Sunset over Chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Golden Sunset</h3><p>The sun setting over the blue-washed buildings</p>">
+                        <img src="./img/gallery/Sunset over Chefchaouen.jpg" alt="Sunset over Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Golden Sunset</h3>
+                                <p class="text-sm">The sun setting over the blue-washed buildings</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item landscapes" data-aos="fade-up" data-aos-delay="300">
+                    <a href="./img/montagne-chefchaouen.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Mountain Path</h3><p>Hiking trail with stunning views of the city and mountains</p>">
+                        <img src="./img/montagne-chefchaouen.jpg" alt="Mountain path near Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Mountain Path</h3>
+                                <p class="text-sm">Hiking trail with stunning views of the city and mountains</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Culture & People Images Section -->
+                <div id="culture" class="col-span-full mt-12 mb-2">
+                    <div class="flex items-center mb-4">
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                        <h2 class="text-2xl font-serif font-bold text-chefblue-dark mx-4" data-aos="fade-right">Culture & People</h2>
+                        <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item culture" data-aos="fade-up">
+                    <a href="./img/gallery/Local artisan in Chefchaouen.png" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Local Artisan</h3><p>Craftsman working on traditional textiles</p>">
+                        <img src="./img/gallery/Local artisan in Chefchaouen.png" alt="Local artisan in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Local Artisan</h3>
+                                <p class="text-sm">Craftsman working on traditional textiles</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item culture" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./img/gallery/Spice market in Chefchaouen.png" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Spice Market</h3><p>Colorful display of traditional Moroccan spices</p>">
+                        <img src="./img/gallery/Spice market in Chefchaouen.png" alt="Spice market in Chefchaouen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Spice Market</h3>
+                                <p class="text-sm">Colorful display of traditional Moroccan spices</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item culture" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./img/gallery/Traditional Moroccan tea service.png" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Mint Tea Ceremony</h3><p>Traditional Moroccan hospitality with mint tea</p>">
+                        <img src="./img/gallery/Traditional Moroccan tea service.png" alt="Traditional Moroccan tea service" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Mint Tea Ceremony</h3>
+                                <p class="text-sm">Traditional Moroccan hospitality with mint tea</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item culture" data-aos="fade-up" data-aos-delay="300">
+                    <a href="./img/artisanat.jpg" class="relative overflow-hidden rounded-lg shadow-md group cursor-pointer block"
+                       data-sub-html="<h3>Traditional Crafts</h3><p>Colorful handmade crafts in a shop of the medina</p>">
+                        <img src="./img/artisanat.jpg" alt="Traditional crafts" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                            <div class="p-4 text-white">
+                                <h3 class="font-medium">Traditional Crafts</h3>
+                                <p class="text-sm">Colorful handmade crafts in a shop of the medina</p>
+                            </div>
+                        </div>
+                        <!-- Zoom Indicator -->
+                        <div class="absolute top-2 right-2 bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="container mx-auto px-4 py-8 text-center" data-aos="fade-up">
+            <button id="load-more" class="bg-chefblue hover:bg-chefblue-dark text-white px-6 py-3 rounded-lg transition duration-300 shadow-md inline-flex items-center">
+                <i class="fas fa-plus-circle mr-2"></i> Load More Photos
+                <span class="ml-2 bg-white text-chefblue-dark rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">8</span>
+            </button>
+        </div>
+        
+        <!-- User Photo Submission Section -->
+        <section class="bg-chefblue-dark text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6" data-aos="fade-down">Share Your Chefchaouen Photos</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Have you visited the Blue Pearl? Share your photos with us for a chance to be featured in our gallery!</p>
+                
+                <div class="max-w-xl mx-auto bg-white/10 p-8 rounded-lg backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="400">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50">
+                            </div>
+                        </div>
+                        
+                        <!-- File Upload Area -->
+                        <div class="border-2 border-dashed border-white/50 rounded-lg p-8 text-center">
+                            <input type="file" id="photo-upload" class="hidden" multiple accept="image/*">
+                            <label for="photo-upload" class="cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-4xl mb-4 block"></i>
+                                <span class="block mb-2">Drag & drop your photos here</span>
+                                <span class="text-sm text-white/70">or click to browse (max 5 photos)</span>
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <input type="text" placeholder="Caption or description (optional)" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50">
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" class="mt-1 mr-2">
+                            <label for="terms" class="text-sm">I agree that these photos are my own and I give permission for them to be displayed on the Chefchaouen website.</label>
+                        </div>
+                        
+                        <button type="submit" class="bg-white text-chefblue-dark hover:bg-sand-light px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Photos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Tips Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                    <h2 class="text-3xl font-serif font-bold text-chefblue-dark mx-4 text-center">Photography Tips</h2>
+                    <div class="h-0.5 bg-chefblue-light w-12"></div>
+                </div>
+                <p class="text-center text-lg mb-12">Capture the magic of Chefchaouen with these professional photography tips</p>
+                
+                <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex">
+                        <div class="mr-4 text-chefblue-dark">
+                            <i class="fas fa-sun text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Optimal Lighting</h3>
+                            <p class="text-gray-700">The blue walls of Chefchaouen look their best during the "golden hours" - early morning and late afternoon. The soft, warm light enhances the blue tones and creates beautiful shadows in the narrow streets.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex">
+                        <div class="mr-4 text-chefblue-dark">
+                            <i class="fas fa-search text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Find Contrasts</h3>
+                            <p class="text-gray-700">Look for colorful elements that contrast with the blue walls - flower pots, carpets, doors, and local goods create striking color combinations and add interest to your photos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex">
+                        <div class="mr-4 text-chefblue-dark">
+                            <i class="fas fa-street-view text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Explore Side Streets</h3>
+                            <p class="text-gray-700">While the main streets are beautiful, the quieter side alleys often provide the most photogenic scenes. Wander off the main paths to discover hidden gems and unique compositions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex">
+                        <div class="mr-4 text-chefblue-dark">
+                            <i class="fas fa-camera-retro text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-chefblue-dark mb-2">Camera Settings</h3>
+                            <p class="text-gray-700">The narrow streets can be challenging for exposure. Consider bracketing your shots or using HDR mode to capture both the bright skies and shadowed walls. Adjust your white balance to enhance the blues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-chefblue-dark text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6" data-aos="fade-down">Experience Chefchaouen in Person</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Photos can only capture a fraction of the beauty. Book a tour and experience the magic of the Blue Pearl with your own eyes.</p>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <a href="tours.html" class="bg-white text-chefblue-dark hover:bg-sand hover:text-chefblue-dark px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center mr-4">
+                        <i class="fas fa-map-marked-alt mr-2"></i> Book a Tour
+                    </a>
+                    <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-chefblue-dark px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">💧</span> Chefchaouen
+                    </h3>
+                    <p class="text-gray-300">Discover the magic of Morocco's blue city nestled in the Rif Mountains.</p>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-chefblue w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-chefblue-light transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="history.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> History</a></li>
+                        <li><a href="culture.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Culture</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Gallery</a></li>
+                        <li><a href="tours.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Tours</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-chefblue-light"></i>
+                            <span>info@chefchaouenguide.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-chefblue-light"></i>
+                            <span>+212 539 986 XXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Medina, Chefchaouen, Morocco</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-chefblue-light"></i>
+                            <span>Open daily: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Photography Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Photography Guide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Best Photo Spots</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Camera Equipment Tips</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Photo Tours</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Photo Contests</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left">&copy; 2023 Chefchaouen Guide. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-chefblue-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Cookie Consent Dialog -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center z-50 transform translate-y-full transition-transform duration-500">
+        <div>
+            <p class="text-gray-800">We use cookies to improve your experience on our site. By continuing to browse, you agree to our <a href="#" class="text-chefblue-dark underline">cookie policy</a>.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex space-x-2">
+            <button id="cookie-accept" class="bg-chefblue-dark text-white px-4 py-2 rounded-lg">Accept</button>
+            <button id="cookie-decline" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg">Decline</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Initialize LightGallery
+            lightGallery(document.getElementById('lightgallery'), {
+                selector: '.gallery-item a',
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                download: false,
+                counter: true,
+                enableDrag: true,
+                enableSwipe: true
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Parallax effect for header background
+            window.addEventListener('scroll', function() {
+                const parallaxBg = document.getElementById('parallax-bg');
+                if (parallaxBg) {
+                    const scrollPosition = window.pageYOffset;
+                    parallaxBg.style.transform = `translateY(${scrollPosition * 0.4}px) scale(1.1)`;
+                }
+            });
+            
+            // Filter gallery items
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-chefblue', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-chefblue', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide gallery items based on filter
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update the count on the load more button
+                    updateLoadMoreCount();
+                });
+            });
+            
+            // View mode toggle
+            const gridView = document.getElementById('grid-view');
+            const masonryView = document.getElementById('masonry-view');
+            const galleryContainer = document.getElementById('gallery-container');
+            
+            gridView.addEventListener('click', function() {
+                galleryContainer.classList.add('grid-view');
+                galleryContainer.classList.remove('masonry-view');
+                
+                // Update active state
+                gridView.classList.add('active', 'text-chefblue-dark');
+                gridView.classList.remove('text-gray-500');
+                masonryView.classList.remove('active', 'text-chefblue-dark');
+                masonryView.classList.add('text-gray-500');
+            });
+            
+            masonryView.addEventListener('click', function() {
+                galleryContainer.classList.add('masonry-view');
+                galleryContainer.classList.remove('grid-view');
+                
+                // Update active state
+                masonryView.classList.add('active', 'text-chefblue-dark');
+                masonryView.classList.remove('text-gray-500');
+                gridView.classList.remove('active', 'text-chefblue-dark');
+                gridView.classList.add('text-gray-500');
+            });
+            
+            // Load more button functionality
+            const loadMoreBtn = document.getElementById('load-more');
+            let visibleItems = 12; // Initial number of visible items
+            
+            // Hide items beyond initial visible count
+            function hideExtraItems() {
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                let count = 0;
+                
+                galleryItems.forEach(item => {
+                    if (activeFilter === 'all' || item.classList.contains(activeFilter)) {
+                        count++;
+                        if (count > visibleItems) {
+                            item.classList.add('hidden');
+                        } else {
+                            item.classList.remove('hidden');
+                        }
+                    }
+                });
+            }
+            
+            // Update the count on the load more button
+            function updateLoadMoreCount() {
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                let totalItems = 0;
+                let hiddenItems = 0;
+                
+                galleryItems.forEach(item => {
+                    if (activeFilter === 'all' || item.classList.contains(activeFilter)) {
+                        totalItems++;
+                        if (item.classList.contains('hidden')) {
+                            hiddenItems++;
+                        }
+                    }
+                });
+                
+                // Update button text and counter
+                const countElement = loadMoreBtn.querySelector('span');
+                countElement.textContent = hiddenItems;
+                
+                // Hide button if no more items to show
+                if (hiddenItems === 0) {
+                    loadMoreBtn.parentElement.classList.add('hidden');
+                } else {
+                    loadMoreBtn.parentElement.classList.remove('hidden');
+                }
+            }
+            
+            // Initial setup
+            hideExtraItems();
+            updateLoadMoreCount();
+            
+            // Load more button click handler
+            loadMoreBtn.addEventListener('click', function() {
+                visibleItems += 4; // Load 4 more items
+                hideExtraItems();
+                updateLoadMoreCount();
+                
+                // Initialize AOS on newly visible items
+                AOS.refresh();
+            });
+            
+            // File upload preview
+            const fileUpload = document.getElementById('photo-upload');
+            if (fileUpload) {
+                fileUpload.addEventListener('change', function(e) {
+                    const files = e.target.files;
+                    if (files.length > 0) {
+                        // Here you would normally show previews of the uploaded files
+                        // For simplicity, we'll just show an alert
+                        alert(`${files.length} file(s) selected for upload`);
+                    }
+                });
+            }
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Cookie consent
+            const cookieConsent = document.getElementById('cookie-consent');
+            const cookieAccept = document.getElementById('cookie-accept');
+            const cookieDecline = document.getElementById('cookie-decline');
+            
+            // Show cookie consent if not previously accepted
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    cookieConsent.classList.remove('translate-y-full');
+                }, 1000);
+            }
+            
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.classList.add('translate-y-full');
+            });
+            
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.classList.add('translate-y-full');
+            });
+        });
+    </script>
+    
+    <style>
+        /* Masonry view styles */
+        .masonry-view #lightgallery {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .masonry-view #lightgallery {
+                column-count: 2;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .masonry-view #lightgallery {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-view #lightgallery {
+                column-count: 4;
+            }
+        }
+        
+        .masonry-view .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .masonry-view .gallery-item a img {
+            height: auto;
+        }
+        
+        .view-toggle.active {
+            background-color: #E6D9B8;
+        }
+        
+        /* Section headers in masonry view */
+        .masonry-view [id^="streets"],
+        .masonry-view [id^="architecture"],
+        .masonry-view [id^="landscapes"],
+        .masonry-view [id^="culture"] {
+            column-span: all;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</body>
+</html>
